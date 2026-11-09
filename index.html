@@ -1928,6 +1928,7 @@ html { overflow-y: scroll; scrollbar-gutter: stable; }
   window.addEventListener('popstate', function () {
     if (!backGuard.on) return;
     try { history.pushState({ radarSonik: 1 }, ''); } catch (e) {} // pulihkan penjaga supaya tombol kembali berikutnya memunculkan dialog lagi
+    if (window.dpBack && window.dpBack()) return; // dp-client: di menu Display mundur satu layar
     if (window.mdBack && window.mdBack()) return; // md-client: lembar MD terbuka -> tutup dulu
     if (aasmFocus) { backToAasm(); return; } // AASM yang sedang membuka tampilan 1 orang: tombol kembali = kembali ke daftar AASM
     showExitDialog();
@@ -4587,7 +4588,7 @@ html { overflow-y: scroll; scrollbar-gutter: stable; }
   function dpMuatLain() { if (DP.lain || DP.lainSt === 'muat') return; DP.lainSt = 'muat'; gasCall('displayTokoLain', [currentPassword, getDeviceId()], function (err, r) { if (err || !r || !r.ok) DP.lainSt = 'gagal'; else { DP.lain = r.toko || []; DP.lainSt = ''; } if (DP.view === 'form') dpRender(); }); }
   function dpForm() {
     var F = DP.f, d = DP.d, q = F.cari.trim().toLowerCase(), toko = d.toko.filter(function (t) { return !q || (t.n + ' ' + t.k).toLowerCase().indexOf(q) >= 0; }), pil = d.toko.filter(function (t) { return t.k === F.kode; })[0], plain = !pil && (DP.lain || []).concat(F.dekat || []).filter(function (t) { return t.k === F.kode; })[0], why = dpWhy(); pil = pil || plain;
-    var h = '<button type="button" class="dp-back" data-dp="kembali">' + (F.ubah ? '‹ Batal, kembali ke laporan' : '‹ Kembali ke Riwayat') + '</button>' + (F.ubah ? '<div class="dp-title">Ubah laporan</div>' : '') + (why && !DP.busy ? '<div class="dp-why" role="status">⚠️ Belum bisa disimpan: ' + dpE(why) + '</div>' : '') + '<div class="card"><div class="dp-h">Toko</div>';
+    var h = '<button type="button" class="dp-back" data-dp="kembali">' + (F.ubah ? '‹ Batal, kembali ke laporan' : '‹ Kembali ke Riwayat') + '</button>' + (F.ubah ? '<div class="dp-title">Ubah laporan</div>' : '') + (F.tanya ? '<div class="card dp-konf"><b>Keluar dari form?</b><div class="dp-note">Foto yang belum disimpan akan hilang.</div><div class="dp-two"><button type="button" class="md-btn ghost" data-dp="tetap">Tetap di sini</button><button type="button" class="md-btn danger" data-dp="keluarform">Ya, keluar</button></div></div>' : '') + (why && !DP.busy ? '<div class="dp-why" role="status">⚠️ Belum bisa disimpan: ' + dpE(why) + '</div>' : '') + '<div class="card"><div class="dp-h">Toko</div>';
     h += F.ubah ? '<div class="dp-pick"><div><b>' + dpE(F.tn) + '</b><small>' + dpE(F.kode) + '</small></div></div><div class="dp-note">Toko dan waktu mengikuti laporan awal.</div>' : pil ? '<div class="dp-pick"><div><b>' + dpE(pil.n) + '</b><small>' + dpE(pil.k) + (plain ? ' · Toko lain' : '') + '</small></div><button type="button" class="md-btn ghost" data-dp="gantitoko">Ganti</button></div>' : '<div class="dp-qw"><input class="dp-in" id="dpCari" type="search" placeholder="Cari nama atau kode toko" value="' + dpE(F.cari) + '" autocomplete="off">' + (F.cari ? '<button type="button" class="dp-clr" data-dp="hapuscaritoko" aria-label="Hapus ketikan">×</button>' : '') + '</div>' + (q ? '' : dpTokoMode()) + '<div class="dp-list">' + dpTokoIsi(toko, q) + '</div>';
     h += '</div>';
     var total = F.pasang.length;
@@ -4717,6 +4718,20 @@ html { overflow-y: scroll; scrollbar-gutter: stable; }
     var manual = function () { R.msg = 'Menu bagikan tidak tersedia. Tekan lama gambar di bawah untuk menyimpan, lalu kirim lewat WhatsApp.'; dpRender(); };
     if (files.length && navigator.canShare && navigator.canShare({ files: files }) && navigator.share) navigator.share({ files: files, title: 'Laporan Display' }).then(function () { if (R.id) dpTandai(R.id, true); }, function (e) { if (!e || e.name !== 'AbortError') manual(); }); else manual();
   }
+  /* Foto yang belum tersimpan: form baru yang sudah berisi foto, atau form Ubah yang fotonya berubah. */
+  function dpKotor() { var F = DP.f; return !!F && (F.ubah ? !!F.kotor : F.pasang.some(function (p) { return p.a || p.b; })); }
+  function dpKeluarForm() { DP.view = 'list'; DP.f = null; DP.err = ''; dpRender(); window.scrollTo(0, 0); }
+  function dpMintaKeluar() { if (dpKotor()) { DP.f.tanya = true; dpRender(); window.scrollTo(0, 0); } else dpKeluarForm(); }
+  function dpTutupDetail() { DP.open = null; DP.msg = ''; DP.err = ''; DP.hapus = null; dpRender(); window.scrollTo(0, 0); }
+  /* Tombol Kembali HP: benar = sudah ditangani di menu Display. */
+  window.dpBack = function () {
+    var d = document.getElementById('dashboard'); if (!d || d.className !== 'tab-display') return false;
+    if (DP.busy) return true;
+    if (DP.rep) { DP.rep = null; dpRender(); window.scrollTo(0, 0); return true; }
+    if (DP.view === 'form') { if (DP.f && !DP.f.tanya) dpMintaKeluar(); return true; }
+    if (DP.open) { dpTutupDetail(); return true; }
+    var h = document.querySelector('[data-nav="home"]'); if (h) h.click(); else d.className = 'tab-home'; window.scrollTo(0, 0); return true;
+  };
   window.renderDisplayTab = dpRender;
   document.addEventListener('click', function (e) {
     var t = e.target.closest && e.target.closest('[data-dp],[data-dptoko],[data-dpdel],[data-dphapus],[data-dpopen],[data-dprep],[data-dpk],[data-dptambah],[data-dpwa],[data-dpm],#dpOpen'); if (!t) return;
@@ -4726,8 +4741,8 @@ html { overflow-y: scroll; scrollbar-gutter: stable; }
     if (t.hasAttribute('data-dpk')) { var kk = t.getAttribute('data-dpk'), F0 = DP.f, ada = F0.pasang.filter(function (p) { return p.kat === kk; }); F0.katMsg = ''; if (ada.length) { if (ada.some(function (p) { return p.a || p.b; })) F0.katMsg = 'Hapus dulu foto ' + dpKs(kk) + ' untuk membatalkan kategori ini.'; else F0.pasang = F0.pasang.filter(function (p) { return p.kat !== kk; }); } else if (F0.pasang.length < DP.d.maxPasang) F0.pasang.push({ kat: kk, a: '', b: '' }); dpRender(); return; }
     if (t.hasAttribute('data-dpm')) { var mm = t.getAttribute('data-dpm'), F1 = DP.f; F1.mode = mm; if (mm === 'dekat' && (!F1.dekat || F1.dekatSt) && F1.dekatSt !== 'muat') dpDekat(); else { if (mm === 'semua') dpMuatLain(); dpRender(); } return; }
     if (t.hasAttribute('data-dptambah')) { DP.f.pasang.push({ kat: t.getAttribute('data-dptambah'), a: '', b: '' }); dpRender(); return; }
-    if (t.hasAttribute('data-dpdel')) { var q = t.getAttribute('data-dpdel').split(':'); var pz = DP.f.pasang[+q[0]]; pz[q[1]] = ''; pz[q[1] + 'U'] = ''; dpRender(); return; }
-    if (t.hasAttribute('data-dphapus')) { DP.f.pasang.splice(+t.getAttribute('data-dphapus'), 1); dpRender(); return; }
+    if (t.hasAttribute('data-dpdel')) { var q = t.getAttribute('data-dpdel').split(':'); var pz = DP.f.pasang[+q[0]]; pz[q[1]] = ''; pz[q[1] + 'U'] = ''; DP.f.kotor = true; dpRender(); return; }
+    if (t.hasAttribute('data-dphapus')) { DP.f.pasang.splice(+t.getAttribute('data-dphapus'), 1); DP.f.kotor = true; dpRender(); return; }
     if (t.hasAttribute('data-dpopen')) { DP.open = t.getAttribute('data-dpopen'); DP.msg = ''; DP.err = ''; DP.hapus = null; dpRender(); window.scrollTo(0, 0); return; }
     if (t.hasAttribute('data-dprep')) { dpRepDari(t.getAttribute('data-dprep')); return; }
     var a = t.getAttribute('data-dp');
@@ -4739,8 +4754,10 @@ html { overflow-y: scroll; scrollbar-gutter: stable; }
     else if (a === 'baru') { DP.f = dpBaru(); DP.view = 'form'; DP.msg = ''; DP.err = ''; dpMuatLain(); dpRender(); dpGps(); window.scrollTo(0, 0); }
     else if (a === 'muatlain') { DP.lainSt = ''; dpMuatLain(); dpRender(); }
     else if (a === 'semualagi') { DP.f.semua = (DP.f.semua || 50) + 50; dpRender(); }
-    else if (a === 'kembali') { DP.view = 'list'; DP.f = null; DP.err = ''; dpRender(); window.scrollTo(0, 0); }
-    else if (a === 'tutup') { DP.open = null; DP.msg = ''; DP.err = ''; DP.hapus = null; dpRender(); window.scrollTo(0, 0); }
+    else if (a === 'kembali') { if (DP.f && DP.f.tanya) { DP.f.tanya = false; dpRender(); } else dpMintaKeluar(); }
+    else if (a === 'tetap') { DP.f.tanya = false; dpRender(); }
+    else if (a === 'keluarform') dpKeluarForm();
+    else if (a === 'tutup') dpTutupDetail();
     else if (a === 'ubah') { var ru = dpRs(DP.open)[0]; if (ru && !ru.wa) dpMulaiUbah(ru); }
     else if (a === 'hapus') { DP.hapus = DP.open; DP.msg = ''; DP.err = ''; dpRender(); }
     else if (a === 'hapusbatal') { DP.hapus = null; dpRender(); }
@@ -4760,7 +4777,7 @@ html { overflow-y: scroll; scrollbar-gutter: stable; }
     if (t.id === 'dpWaF') { DP.wa = t.value; DP.shown = 20; dpRender(); return; }
     if (t.id === 'dpTglF') { DP.tgl = t.value; DP.shown = 20; dpRender(); return; }
     if (t.hasAttribute('data-dpkat')) { DP.f.pasang[+t.getAttribute('data-dpkat')].kat = t.value; dpRender(); return; }
-    if (t.hasAttribute('data-dpfile') && t.files && t.files[0]) { var q = t.getAttribute('data-dpfile').split(':'), F = DP.f; dpResize(t.files[0], function (u) { if (!u) { DP.err = 'Foto tidak bisa dibaca. Coba lagi.'; } else if (F.pasang[+q[0]]) { F.pasang[+q[0]][q[1]] = u; F.pasang[+q[0]][q[1] + 'U'] = ''; } dpRender(); }); }
+    if (t.hasAttribute('data-dpfile') && t.files && t.files[0]) { var q = t.getAttribute('data-dpfile').split(':'), F = DP.f; dpResize(t.files[0], function (u) { if (!u) { DP.err = 'Foto tidak bisa dibaca. Coba lagi.'; } else if (F.pasang[+q[0]]) { F.pasang[+q[0]][q[1]] = u; F.pasang[+q[0]][q[1] + 'U'] = ''; F.kotor = true; } dpRender(); }); }
   });
   /* /dp-client */
   function mdOn() { var el = document.getElementById('mdScreen'); return !!el && !el.hidden; }
