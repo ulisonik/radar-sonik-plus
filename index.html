@@ -4673,7 +4673,7 @@ html { overflow-y: scroll; scrollbar-gutter: stable; }
           .displayUbah(currentPassword, getDeviceId(), { id: F.id, cid: F.cid, ket: F.ket, pasang: F.pasang.map(function (p) { return { kat: p.kat, a: p.aU, b: p.bU }; }) });
         return;
       }
-      google.script.run.withSuccessHandler(function (r) { DP.busy = false; DP.prog = ''; if (!r || !r.ok) { DP.err = (r && r.error) || 'Gagal menyimpan. Coba lagi.'; dpRender(); return; } DP.hasil = null; dpCariJadwal(); DP.f = null; DP.view = 'list'; DP.msg = 'Display tersimpan.'; DP.open = null; DP.bulan = ''; DP.shown = 20; DP.tgl = ''; DP.wa = ''; dpBuatRep({ id: r.id, tn: nama, w: dpJam(), nama: '' }, lokal); dpLoad(true); })
+      google.script.run.withSuccessHandler(function (r) { DP.busy = false; DP.prog = ''; if (!r || !r.ok) { DP.err = (r && r.error) || 'Gagal menyimpan. Coba lagi.'; dpRender(); return; } DP.hasil = null; dpCariJadwal(); DP.f = null; DP.view = 'list'; DP.msg = 'Display tersimpan.'; DP.open = null; DP.bulan = ''; DP.shown = 20; DP.tgl = ''; DP.wa = ''; dpBuatRep({ id: r.id, tn: nama, w: dpJam(), nama: r.oleh || '', ket: F.ket }, lokal); dpLoad(true); })
         .withFailureHandler(function () { gagal('Koneksi terputus. Tekan Simpan lagi, foto yang sudah terkirim tidak diulang.'); })
         .displaySave(currentPassword, getDeviceId(), { cid: F.cid, kode: F.kode, ket: F.ket, lokasi: F.gps, pasang: F.pasang.map(function (p) { return { kat: p.kat, a: p.aU, b: p.bU }; }) });
     };
@@ -4697,8 +4697,12 @@ html { overflow-y: scroll; scrollbar-gutter: stable; }
     });
   }
   function dpKelompok(pasang) { var urut = [], byK = {}; pasang.forEach(function (p) { if (!byK[p.kat]) { byK[p.kat] = { kat: p.kat, items: [] }; urut.push(byK[p.kat]); } byK[p.kat].items.push(p); }); return urut; }
+  function dpCaption(info, grup) {
+    var ket = String(info.ket || '').replace(/\s+/g, ' ').trim();
+    return ['*LAPORAN DISPLAY PAJANGAN*', 'Toko: ' + info.tn, 'Tanggal: ' + info.w, 'Kategori: ' + grup.map(function (x) { return dpKs(x.kat); }).join(', ')].concat(info.nama ? ['Oleh: ' + info.nama] : [], ket ? ['Keterangan: ' + ket] : []).join('\n');
+  }
   function dpBuatRep(info, pasang) {
-    var grup = dpKelompok(pasang), R = DP.rep = { busy: true, done: 0, total: grup.length, blobs: [], urls: [], msg: '', err: '', tn: info.tn, id: info.id, sent: !!info.wa }; dpRender(); window.scrollTo(0, 0);
+    var grup = dpKelompok(pasang), R = DP.rep = { busy: true, done: 0, total: grup.length, blobs: [], urls: [], msg: '', err: '', tn: info.tn, id: info.id, sent: !!info.wa, cap: dpCaption(info, grup) }; dpRender(); window.scrollTo(0, 0);
     grup.reduce(function (pr, x, i) { return pr.then(function () { return dpGambar(info, x, i + 1, grup.length).then(function (b) { R.blobs.push(b); R.urls.push(URL.createObjectURL(b)); R.done = i + 1; if (DP.rep === R) dpRender(); }); }); }, Promise.resolve()).then(function () { R.busy = false; if (DP.rep === R) dpRender(); }, function () { R.busy = false; R.err = 'Gagal membuat gambar laporan.'; if (DP.rep === R) dpRender(); });
   }
   function dpRepDari(id) {
@@ -4715,8 +4719,8 @@ html { overflow-y: scroll; scrollbar-gutter: stable; }
   }
   function dpKirim() {
     var R = DP.rep, files; try { files = R.blobs.map(function (b, i) { return new File([b], 'display-' + (i + 1) + '.jpg', { type: 'image/jpeg' }); }); } catch (e) { files = []; }
-    var manual = function () { R.msg = 'Menu bagikan tidak tersedia. Tekan lama gambar di bawah untuk menyimpan, lalu kirim lewat WhatsApp.'; dpRender(); };
-    if (files.length && navigator.canShare && navigator.canShare({ files: files }) && navigator.share) navigator.share({ files: files, title: 'Laporan Display' }).then(function () { if (R.id) dpTandai(R.id, true); }, function (e) { if (!e || e.name !== 'AbortError') manual(); }); else manual();
+    var manual = function () { var m = 'Menu bagikan tidak tersedia. Tekan lama gambar di bawah untuk menyimpan, lalu kirim lewat WhatsApp.'; R.msg = m; dpRender(); if (navigator.clipboard && R.cap) navigator.clipboard.writeText(R.cap).then(function () { R.msg = m + ' Caption sudah disalin, tinggal tempel.'; dpRender(); }, function () {}); };
+    if (files.length && navigator.canShare && navigator.canShare({ files: files }) && navigator.share) navigator.share({ files: files, title: 'Laporan Display', text: R.cap }).then(function () { if (R.id) dpTandai(R.id, true); }, function (e) { if (!e || e.name !== 'AbortError') manual(); }); else manual();
   }
   /* Foto yang belum tersimpan: form baru yang sudah berisi foto, atau form Ubah yang fotonya berubah. */
   function dpKotor() { var F = DP.f; return !!F && (F.ubah ? !!F.kotor : F.pasang.some(function (p) { return p.a || p.b; })); }
