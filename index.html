@@ -2128,9 +2128,20 @@ html { overflow-y: scroll; scrollbar-gutter: stable; }
     if (!lsSet(LS_CACHE, { at: Date.now(), res: res })) lsDel(LS_CACHE); // terlalu besar utk penyimpanan HP: abaikan salinan lokal
   }
   function clearRemembered() { lsDel(LS_LOGIN); lsDel(LS_CACHE); }
+  /* sesi-tab (11 Nov 2026): tanpa "Ingat saya", kode disimpan di sessionStorage (hilang saat tab ditutup atau ganti kode) supaya tarik layar / muat ulang tidak mengeluarkan pengguna; menu terakhir dibuka lagi. */
+  var SS_SES = 'rsp_ses_v1', SS_TAB = 'rsp_tab_v1', sesRestore = false;
+  function ssGet(k) { try { return sessionStorage.getItem(k); } catch (e) { return null; } }
+  function ssSet(k, v) { try { sessionStorage.setItem(k, v); } catch (e) {} }
+  function ssDel(k) { try { sessionStorage.removeItem(k); } catch (e) {} }
+  function sesClear() { ssDel(SS_SES); ssDel(SS_TAB); }
+  document.addEventListener('click', function (e) { var b = e.target && e.target.closest && e.target.closest('[data-nav],[data-mdnav]'); if (!b || !currentPassword) return; ssSet(SS_TAB, b.hasAttribute('data-mdnav') ? 'md:' + b.getAttribute('data-mdnav') : 'nav:' + b.getAttribute('data-nav')); }, true);
+  function sesTabRestore() {
+    var t = ssGet(SS_TAB); if (!t) return; var p = t.split(':'), sel = p[0] === 'md' ? '[data-mdnav="' + p[1] + '"]' : '[data-nav="' + p[1] + '"]';
+    setTimeout(function () { var b = document.querySelector(sel); if (b && b.getClientRects().length && p[1] !== 'home' && p[1] !== 'beranda') b.click(); }, 0);
+  }
   // Kode akses sudah berubah/dicabut di server: kembali ke layar login
   function forceRelogin(msg) {
-    stopSync(); clearRemembered(); currentPassword = '';
+    stopSync(); clearRemembered(); sesClear(); currentPassword = '';
     if (typeof mdReset === 'function') mdReset(); // md-client
     document.getElementById('dashboard').style.display = 'none';
     var ls = document.getElementById('loginScreen') || document.getElementById('login'); if (ls) ls.style.display = 'block';
@@ -2160,7 +2171,7 @@ html { overflow-y: scroll; scrollbar-gutter: stable; }
   document.addEventListener('click', function (e) { if (e.target && e.target.closest && e.target.closest('#logoutBtn')) askSwitchCode(); });
 
   function logout() {
-    stopSync(); clearRemembered();
+    stopSync(); clearRemembered(); sesClear();
     backGuard.on = false;
     hideExitDialog();
     currentPassword = '';
@@ -2189,6 +2200,8 @@ html { overflow-y: scroll; scrollbar-gutter: stable; }
     if (fromLogin) {
       installBackGuard(); aasmFocus = null; aasmRoot = null;
       if (!autoLoginRun) { if (pendingRemember) persistLogin(currentPassword); else clearRemembered(); }
+      if (currentPassword) ssSet(SS_SES, currentPassword);
+      if (sesRestore) { sesRestore = false; sesTabRestore(); }
     }
     if (res.role === 'MD') { mdShow(res); syncBaseline(res, fromLogin); document.getElementById('loginScreen').style.display = 'none'; if (fromLogin) window.scrollTo(0, 0); return; } // md-client
     if (typeof mdHide === 'function') mdHide();
@@ -5464,7 +5477,8 @@ html { overflow-y: scroll; scrollbar-gutter: stable; }
   // Buka aplikasi: bila "Ingat saya" aktif, langsung masuk. Ada salinan lokal -> tampil seketika (lalu disinkronkan); tanpa salinan -> muat dari server.
   (function autoLogin() {
     var saved = lsGet(LS_LOGIN);
-    if (!saved || !saved.pw) return;
+    if (!saved || !saved.pw) { var sp = ssGet(SS_SES); if (sp) { sesRestore = true; document.getElementById('rememberMe').checked = false; document.getElementById('pwInput').value = sp; submitAccess(); } return; }
+    sesRestore = true;
     var cache = lsGet(LS_CACHE);
     currentPassword = saved.pw;
     document.getElementById('rememberMe').checked = true;
