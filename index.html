@@ -262,7 +262,56 @@
 .dp-back, .dp-link { border: 0; background: none; padding: 0; color: var(--brand); font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; } .dp-back { display: block; margin-bottom: 10px; } .dp-link { text-decoration: underline; }
 .dp-note { font-size: 13px; color: var(--ink-muted); margin-top: 4px; } .dp-c { text-align: center; } .dp-ket { margin: 8px 0; font-size: 14px; } .dp-big { font-size: 16px; }
 .dp-err { background: #FDE8E6; color: #9B1C1C; border-radius: 12px; padding: 10px 12px; margin-bottom: 12px; font-size: 13.5px; } .dp-ok { background: #E3F6E9; color: #136B42; border-radius: 12px; padding: 10px 12px; margin-bottom: 12px; font-size: 13.5px; font-weight: 600; }
-.dp-chips { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; } .dp-chip { padding: 11px 4px; border: 1.5px solid var(--brand); border-radius: 12px; background: var(--surface); color: var(--brand); font: inherit; font-size: 14px; font-weight: 700; cursor: pointer; } .dp-chip.on { background: var(--brand); color: #fff; } .dp-pr + .dp-pr { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); } .dp-pr .dp-hrow small { font-weight: 700; } .dp-add { margin: 12px 0 0; min-height: 44px; }
+.dp-chips { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; } .dp-chip { padding: 11px 4px; border: 1.5px solid var(--brand); border-radius: 12px; background: var(--surface); color: var(--brand); font: inherit; font-size: 14px; font-weight: 700; cursor: pointer; } .dp-chip.on { background: var(--brand); color: #fff; }
+/* dp-alur (10 Nov 2026, masukan user): langkah bernomor, BU pilih-banyak bertanda centang, kirim WhatsApp dgn konfirmasi + jalur HP 2 WhatsApp */
+.dp-no { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; margin-right: 8px; border-radius: 50%; background: var(--brand); color: #fff; font-size: 12px; font-weight: 800; vertical-align: 1px; }
+.dp-h small.dp-cnt { white-space: nowrap; margin-left: 6px; font-size: 12px; font-weight: 700; color: var(--ink-muted); }
+.dp-chip { display: inline-flex; align-items: center; justify-content: center; gap: 5px; }
+.dp-ck { display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; border-radius: 6px; border: 1.5px solid currentColor; font-size: 13px; font-weight: 800; line-height: 1; flex: none; }
+.dp-chip.on .dp-ck { color: var(--brand); background: #fff; border-color: #fff; }
+.dp-tip { margin: 0 0 12px; padding: 10px 12px; border-radius: 12px; background: #F3ECFE; color: #3B1A78; font-size: 13px; line-height: 1.4; }
+.dp-tip b { font-weight: 800; }
+.dp-sum { text-align: center; font-size: 12.5px; color: var(--ink-muted); margin: 6px 0 0; }
+.dp-konf.dp-tanya { border: 2px solid var(--brand); }
+.dp-alt { margin-top: 12px; }
+.dp-alt ol { margin: 6px 0 10px 18px; padding: 0; font-size: 13px; line-height: 1.5; }
+.dp-alt .md-btn { margin-top: 8px; }
+/* dp-md (10 Nov 2026): Display MD di layar MD + Rekap harian */
+#mdDpHost { margin-top: 4px; }
+.md-dpcard { display: flex; align-items: center; gap: 12px; width: 100%; margin: 0 0 12px; padding: 14px; border: 0; border-radius: 18px; background: linear-gradient(135deg, #7A35E6, #46188F); color: #fff; font: inherit; text-align: left; cursor: pointer; box-shadow: var(--shadow); }
+.md-dpcard .dc-ico { font-size: 26px; line-height: 1; flex: none; } .md-dpcard b { display: block; font-size: 15.5px; } .md-dpcard small { display: block; font-size: 12px; opacity: .9; line-height: 1.3; margin-top: 2px; } .md-dpcard .dc-go { margin-left: auto; font-size: 22px; font-weight: 800; }
+.dp-rekap { border: 2px solid var(--brand); }
+.dp-keras { margin: 0 0 12px; padding: 12px 14px; border-radius: 14px; background: #FDE8E8; border: 2px solid #DC2626; color: #7F1D1D; font-size: 13px; line-height: 1.45; }
+.dp-keras b.dk-t { display: block; font-size: 14.5px; font-weight: 800; color: #B91C1C; margin-bottom: 4px; }
+.dp-keras ul { margin: 6px 0 0 18px; padding: 0; }
+.dp-lok { margin: 0 0 12px; padding: 12px 14px; border-radius: 14px; background: #FEF3C7; border: 2px solid #F59E0B; color: #78350F; font-size: 13px; line-height: 1.45; }
+.dp-lok.bad { background: #FDE8E8; border-color: #DC2626; color: #7F1D1D; } .dp-lok.ok { background: #E8F7EE; border-color: #22C55E; color: #14532D; } .dp-lok b { font-weight: 800; }
+.ed-draf { margin: 0 0 14px; padding: 12px; border-radius: 14px; background: #FDE8E8; border: 2px solid #DC2626; color: #7F1D1D; font-size: 13px; line-height: 1.45; text-align: left; }
+.ed-draf button { display: block; width: 100%; margin-top: 10px; padding: 11px; border: 0; border-radius: 12px; background: #B91C1C; color: #fff; font: inherit; font-weight: 800; cursor: pointer; }
+/* dp-sudut (10 Nov 2026, masukan user): foto Sesudah dari posisi & sudut yang sama dengan Sebelum; slot Sesudah memperlihatkan foto Sebelum samar sebagai acuan */
+.dp-slot.dp-acuan { background-size: cover; background-position: center; }
+.dp-ang { margin: 0 6px 8px; padding: 6px 8px; border-radius: 10px; background: rgba(255,255,255,.92); color: #3B1A78; font-size: 11.5px; font-weight: 800; line-height: 1.3; text-align: center; }
+/* dp-aman (10 Nov 2026, keputusan user): status penyimpanan foto terlihat; tiap foto langsung disalin ke HP (terverifikasi) dan diunggah ke server di latar */
+.dp-aman { margin: 0 0 12px; padding: 10px 12px; border-radius: 12px; font-size: 12.5px; font-weight: 700; line-height: 1.4; background: #E8F7EE; border: 1.5px solid #22C55E; color: #14532D; }
+.dp-aman.bad { background: #FDE8E8; border: 2px solid #DC2626; color: #7F1D1D; }
+.dp-slot { position: relative; } .dp-awan { position: absolute; left: 6px; bottom: 6px; padding: 3px 8px; border-radius: 99px; background: rgba(20,83,45,.88); color: #fff; font-size: 10.5px; font-weight: 800; } .dp-awan.hp { background: rgba(55,48,163,.88); }
+/* dp-auto (10 Nov 2026, keputusan user): laporan lengkap tersimpan otomatis (hitung mundur, bisa ditunda untuk menambah foto); tanpa sinyal = peringatan + coba ulang otomatis + tombol Simpan */
+.dp-auto { margin: 12px 0 0; padding: 12px 14px; border-radius: 14px; background: #EDE4FD; border: 2px solid var(--brand); color: #2A1650; font-size: 13.5px; font-weight: 700; line-height: 1.4; }
+.dp-auto.bad { background: #FDE8E8; border-color: #DC2626; color: #7F1D1D; }
+.dp-auto .dp-two { margin-top: 10px; }
+.dp-three { display: grid; gap: 8px; margin-top: 10px; }
+.dp-draf { margin: 0 0 12px; padding: 12px 14px; border-radius: 14px; background: #EEF2FF; border: 2px solid #6366F1; color: #1E1B4B; font-size: 13px; line-height: 1.45; }
+.dp-draf b.dd-t { display: block; font-size: 14px; font-weight: 800; margin-bottom: 2px; } .dp-draf .dp-two { margin-top: 10px; }
+.dp-phsel { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; }
+.dp-phsel button { padding: 12px 8px; border: 1.5px solid var(--brand); border-radius: 14px; background: var(--surface); color: var(--brand); font: inherit; font-size: 13.5px; font-weight: 800; cursor: pointer; }
+.dp-phsel button.on { background: var(--brand); color: #fff; }
+.dp-phsel button.tdk.on { background: #B91C1C; border-color: #B91C1C; }
+.dp-slot1 { max-width: 60%; }
+.dp-rekap .dp-h { margin-bottom: 4px; }
+.dp-rekap .md-btn { margin-top: 10px; }
+.dp-rlain { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.dp-rlain button { border: 1.5px solid var(--brand); border-radius: 99px; background: var(--surface); color: var(--brand); font: inherit; font-size: 12.5px; font-weight: 700; padding: 6px 12px; cursor: pointer; }
+.dp-altbtn { display: block; width: 100%; margin: 10px 0 0; padding: 10px; border: 0; background: none; color: var(--brand); font: inherit; font-size: 13.5px; font-weight: 700; text-decoration: underline; cursor: pointer; } .dp-pr + .dp-pr { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); } .dp-pr .dp-hrow small { font-weight: 700; } .dp-add { margin: 12px 0 0; min-height: 44px; }
 .dp-fil { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; } .dp-fil .dp-in { padding: 11px 8px; font-size: 14px; } .dp-why { position: sticky; top: 8px; z-index: 20; margin-bottom: 12px; padding: 12px 14px; border-radius: 12px; background: #A3560A; color: #fff; font-size: 14px; font-weight: 600; box-shadow: 0 6px 16px rgba(60,30,110,.25); } .dp-empty.dp-miss { border-color: #B83829; background: #FDE8E6; color: #9B1C1C; } .dp-act, .dp-konf { margin-top: 12px; } .dp-konf .dp-two { margin-top: 10px; } .md-btn.dp-del { background: var(--surface); color: #B91C1C; border: 1.5px solid #B91C1C; } #dpOpen { background: linear-gradient(135deg, #FFE14D, #FFC21A); border: 1.5px solid #E5A800; color: #2A1650; } #dpOpen small { color: #4A3A00; } .dp-sub { margin-top: 10px; padding: 8px 4px 2px; border-top: 2px solid var(--border); font-size: 12.5px; font-weight: 700; color: var(--brand); } .dp-note .dp-link { background: none; border: 0; padding: 0; font: inherit; cursor: pointer; } .dp-chips.dp-c3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 10px; } .dp-c3 .dp-chip { padding-left: 2px; padding-right: 2px; font-size: 13px; } .scn-live { position: fixed; inset: 0; z-index: 9999; background: #000; } .scn-live video { width: 100%; height: 100%; object-fit: cover; display: block; } .scn-aim { position: absolute; left: 11%; right: 11%; top: 50%; height: 150px; margin-top: -75px; border: 3px solid #FFD02E; border-radius: 16px; box-shadow: 0 0 0 100vmax rgba(15,23,42,.45); } .scn-hint { position: absolute; left: 16px; right: 16px; top: calc(50% + 92px); text-align: center; color: #fff; font-size: 14px; font-weight: 600; } .scn-act { position: absolute; left: 16px; right: 16px; bottom: calc(22px + env(safe-area-inset-bottom)); display: flex; gap: 10px; } .scn-act button { flex: 1; padding: 14px; border: 0; border-radius: 14px; font: inherit; font-size: 15px; font-weight: 600; background: var(--brand); color: #fff; cursor: pointer; } .scn-act button[data-scnl="foto"] { background: #fff; color: var(--brand); } .dp-dim { opacity: .5; } .dp-wide { grid-column: 1 / -1; } .dp-wa { display: inline-block; padding: 1px 7px; border-radius: 999px; font-size: 11px; font-weight: 700; white-space: nowrap; } .dp-wa.ok { background: #E3F6E9; color: #136B42; } .dp-wa.no { background: #FDE9D2; color: #A3560A; } .dp-wr { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 12px; } .dp-reset { display: block; margin: 0 0 8px auto; padding: 4px 2px; border: 0; background: none; color: var(--brand); font: inherit; font-size: 13.5px; font-weight: 600; cursor: pointer; } .dp-qw { position: relative; margin-bottom: 8px; } .dp-qw .dp-in { padding-right: 42px; } .dp-qw input::-webkit-search-cancel-button { display: none; } .dp-clr { position: absolute; right: 6px; top: 50%; width: 32px; height: 32px; margin-top: -16px; border: 0; border-radius: 50%; background: var(--surface-2); color: var(--ink-muted); font-size: 18px; line-height: 1; cursor: pointer; } .dp-count { font-size: 12.5px; color: var(--ink-muted); margin-bottom: 4px; } .dp-grp { font-size: 13px; font-weight: 700; color: var(--ink-muted); margin: 12px 2px 6px; } .dp-item { margin-bottom: 8px; }
 .dp-rep { display: block; width: 100%; border-radius: 12px; margin-bottom: 12px; }
 #stokRoot { display: block; }
@@ -1212,10 +1261,34 @@ html { overflow-y: scroll; scrollbar-gutter: stable; }
     .md-actn.bad { background: var(--danger-soft); color: var(--danger); }
     .md-actt { flex: 1; min-width: 0; } .md-actt b { display: block; font-size: 14.5px; } .md-actt small { display: block; font-size: 12px; color: var(--ink-muted); margin-top: 2px; }
     /* md-alur (8 Nov 2026): alur 3 tahap + Audit V terpisah (merah muda accent2) + baris berkata kerja */
-    .md-flow { padding: 12px; margin-bottom: 10px; } .md-fh { margin: 0 2px 8px; } .md-fh b { font-size: 15px; }
+    .md-flow { padding: 12px; margin-bottom: 10px; }
+/* md-rev (10 Nov 2026, masukan user): kotak Beranda bisa diklik + disorot; alur rata tengah; peta tidak menutupi menu/lembar; filter peta tanpa geser; foto diperbesar di dalam aplikasi */
+.md-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+.md-tile { position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 2px; min-width: 0; padding: 12px 12px 11px; border-radius: 16px; border: 1.5px solid transparent; font: inherit; text-align: left; cursor: pointer; color: var(--ink); }
+.md-tile .mt-ico { font-size: 20px; line-height: 1; }
+.md-tile .mt-val { font-size: 28px; font-weight: 800; line-height: 1.05; margin-top: 6px; font-variant-numeric: tabular-nums; }
+.md-tile .mt-lbl { font-size: 12.5px; font-weight: 700; line-height: 1.25; }
+.md-tile .mt-sub { font-size: 11.5px; font-weight: 700; color: var(--ink-muted); line-height: 1.25; }
+.md-tile .mt-sub.bad { color: var(--danger); }
+.md-tile .mt-go { position: absolute; right: 12px; top: 10px; font-size: 18px; font-weight: 800; opacity: .55; }
+.md-tile.t-amber { background: #FFF4E0; border-color: #F6C77B; } .md-tile.t-brand { background: #F1E9FE; border-color: #C9A8F5; }
+.md-tile.t-pink { background: #FDECF3; border-color: #F3A9C8; } .md-tile.t-slate { background: #EEF2F7; border-color: #CBD5E1; }
+.md-tile.zero { opacity: .6; }
+.md-hl { display: flex; align-items: center; gap: 10px; padding: 10px 12px; margin-bottom: 8px; border-radius: 14px; background: #E8F7EE; color: #14532D; font-size: 13.5px; font-weight: 700; line-height: 1.3; }
+.md-hl .hl-ico { font-size: 20px; line-height: 1; flex: none; } .md-hl b { font-size: 17px; }
+.md-hl.au { background: #FDECF3; color: #831843; }
+.leaflet-container { z-index: 0; isolation: isolate; }
+.md-lb { position: fixed; inset: 0; z-index: 95; display: flex; flex-direction: column; background: rgba(10,6,20,.94); }
+.md-lb[hidden] { display: none; }
+.md-lb-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 12px 14px; padding-top: calc(12px + env(safe-area-inset-top, 0px)); }
+.md-lb-top a { color: #E9DDFE; font-size: 13px; font-weight: 700; }
+.md-lb-x { border: 0; border-radius: 99px; padding: 9px 16px; background: #fff; color: #1F1235; font: inherit; font-weight: 800; cursor: pointer; }
+.md-lb-img { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; padding: 8px; overflow: auto; }
+.md-lb-img img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 8px; } .md-fh { margin: 0 2px 8px; } .md-fh b { font-size: 15px; }
     .md-fsteps { display: flex; align-items: stretch; gap: 2px; } .md-far { align-self: center; color: var(--ink-muted); font-style: normal; font-weight: 800; font-size: 18px; }
     .md-fs { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 1px; padding: 8px 4px; border-radius: 14px; border: 1.5px solid var(--border); background: var(--surface); color: var(--ink); font: inherit; cursor: pointer; text-align: center; }
-    .md-fs small { font-size: 11.5px; font-weight: 700; line-height: 1.2; } .md-fs b { font-size: 22px; line-height: 1.15; background: none !important; color: inherit !important; padding: 0 !important; min-width: 0 !important; } .md-fs span { font-size: 10.5px; color: var(--ink-muted); line-height: 1.2; } .md-fs span.bad { color: var(--danger); font-weight: 700; }
+    .md-fs small { font-size: 11.5px; font-weight: 700; line-height: 1.2; display: flex; align-items: center; justify-content: center; min-height: 2.4em; width: 100%; text-align: center; } .md-fs b { font-size: 22px; line-height: 1.15; background: none !important; color: inherit !important; padding: 0 !important; min-width: 0 !important; } .md-fs span { font-size: 10.5px; color: var(--ink-muted); line-height: 1.2; display: block; min-height: 2.4em; width: 100%; text-align: center; }
+.md-fs { justify-content: flex-start; text-align: center; } .md-fs span.bad { color: var(--danger); font-weight: 700; }
     .md-fs.on { background: var(--brand); border-color: var(--brand); color: #fff; } .md-fs.on span { color: #EADCFB; } .md-fs.on span.bad { color: #FFD3CC; }
     .md-avcard { display: flex; align-items: center; gap: 10px; width: 100%; margin: 0 0 12px; padding: 12px; border-radius: 16px; border: 1.5px solid #F2A9CC; background: var(--accent2-soft); color: var(--ink); font: inherit; text-align: left; cursor: pointer; }
     .md-avi { font-size: 22px; } .md-avt { flex: 1; min-width: 0; } .md-avt b { display: block; color: var(--accent2); font-size: 14.5px; } .md-avt small { display: block; font-size: 12px; color: var(--ink-muted); margin-top: 2px; }
@@ -1352,7 +1425,7 @@ html { overflow-y: scroll; scrollbar-gutter: stable; }
     .md-x { width: 40px; height: 42px; border: none; border-radius: 10px; background: #FEE2E2; color: #991B1B; font-size: 20px; cursor: pointer; flex-shrink: 0; }
     #mdMapWrap { border-radius: 14px; overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow); }
     #mdMap { height: 62vh; min-height: 300px; }
-    .md-mapf { display: flex; gap: 6px; overflow-x: auto; margin-bottom: 10px; scrollbar-width: none; }
+    .md-mapf { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
     .md-mapf .md-chip { flex-shrink: 0; }
     .md-legend { display: flex; flex-wrap: wrap; gap: 6px 12px; font-size: 12px; margin: 8px 2px; color: var(--ink-muted); }
     .md-legend i { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 4px; vertical-align: -1px; }
@@ -1764,7 +1837,7 @@ html { overflow-y: scroll; scrollbar-gutter: stable; }
     </div>
 
     <div id="stokRoot" data-tab="stok"></div>
-    <div id="dpRoot" data-tab="display"></div>
+    <i id="dpHome" hidden></i><div id="dpRoot" data-tab="display"></div>
     <div id="guideRoot" data-tab="panduan"></div>
 
     <nav class="bottom-nav" aria-label="Menu utama">
@@ -1900,7 +1973,7 @@ html { overflow-y: scroll; scrollbar-gutter: stable; }
     d.setAttribute('role', 'dialog'); d.setAttribute('aria-modal', 'true'); d.setAttribute('aria-labelledby', 'exitDialogTitle');
     d.innerHTML = '<div class="ed-box"><div class="ed-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg></div>' +
       '<div class="ed-title" id="exitDialogTitle">Keluar dari RADAR SONIK+?</div>' +
-      '<div class="ed-text">Apakah kamu ingin keluar dari RADAR SONIK+? Kamu bisa masuk lagi kapan saja dengan kode akses.</div>' +
+      '<div class="ed-text">Apakah kamu ingin keluar dari RADAR SONIK+? Kamu bisa masuk lagi kapan saja dengan kode akses.</div><div class="ed-draf" id="exitDraf" hidden></div>' +
       '<div class="ed-actions"><button type="button" class="ed-stay" id="exitStayBtn">Tetap di sini</button><button type="button" class="ed-leave" id="exitLeaveBtn">Keluar</button></div></div>';
     document.body.appendChild(d);
     d.addEventListener('click', function (e) { if (e.target === d) hideExitDialog(); });
@@ -1910,7 +1983,9 @@ html { overflow-y: scroll; scrollbar-gutter: stable; }
     backGuard.dialog = d;
     return d;
   }
-  function showExitDialog() { var d = ensureExitDialog(); d.hidden = false; try { d.querySelector('#exitStayBtn').focus(); } catch (e) {} }
+  function showExitDialog() { var d = ensureExitDialog(); var di = window.dpDraftInfo && window.dpDraftInfo(), xd = d.querySelector('#exitDraf'); /* dp-draf: ingatkan laporan display belum tersimpan */
+    if (xd) { xd.hidden = !di; xd.innerHTML = di ? '⚠️ <b>Ada laporan display belum tersimpan</b>' + (di.F && di.F.tnDraf ? ' (' + String(di.F.tnDraf).replace(/[<>&"]/g, '') + ')' : '') + '. Foto aman di HP ini, tetapi <b>belum terkirim</b>. Simpan dulu sebelum keluar.<button type="button" id="exitDrafBtn">Buka &amp; simpan sekarang</button>' : ''; var xb = xd.querySelector('#exitDrafBtn'); if (xb) xb.onclick = function () { hideExitDialog(); if (window.dpBukaDraf) window.dpBukaDraf(); }; }
+    d.hidden = false; try { d.querySelector('#exitStayBtn').focus(); } catch (e) {} }
   function hideExitDialog() { if (backGuard.dialog) backGuard.dialog.hidden = true; }
   function leaveApp() {
     hideExitDialog();
@@ -4593,17 +4668,18 @@ html { overflow-y: scroll; scrollbar-gutter: stable; }
   function dpEl() { return document.getElementById('dpRoot'); }
   function dpBaru() { return { kode: '', cari: '', ket: '', gps: null, gpsMsg: 'Mengambil lokasi…', pasang: [], katMsg: '', cid: 'D' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6) }; }
   function dpGps() { var F = DP.f; if (!F || !navigator.geolocation) { if (F) F.gpsMsg = 'Lokasi tidak tersedia di HP ini.'; return; } navigator.geolocation.getCurrentPosition(function (p) { F.gps = { lat: p.coords.latitude, lng: p.coords.longitude }; F.gpsMsg = 'Lokasi terambil.'; if (DP.view === 'form') dpRender(); }, function () { F.gpsMsg = 'Lokasi tidak bisa diambil. Laporan tetap bisa disimpan.'; if (DP.view === 'form') dpRender(); }, { enableHighAccuracy: true, timeout: 15000 }); }
-  function dpLoad(tenang) { if (DP.loading) return; DP.loading = true; if (!tenang) dpRender(); gasCall('displayInit', [currentPassword, getDeviceId(), DP.bulan || ''], function (err, r) { DP.loading = false; if (err || !r || !r.ok) DP.err = (r && r.error) || 'Tidak bisa memuat Display. Coba lagi.'; else { if (!tenang) DP.err = ''; DP.d = r; } dpRender(); }); }
-  function dpBuka() { document.getElementById('dashboard').className = 'tab-display'; Array.prototype.forEach.call(document.querySelectorAll('.bottom-nav .nav-item'), function (b) { b.classList.remove('active'); }); DP.view = 'list'; DP.msg = ''; window.scrollTo(0, 0); dpLoad(); }
+  function dpLoad(tenang) { if (DP.loading) return; if (!tenang) dpdMuat(function () { if (DP.d && DP.view === 'list') dpRender(); }); /* dp-draf */ DP.loading = true; if (!tenang) dpRender(); gasCall('displayInit', [currentPassword, getDeviceId(), DP.bulan || ''], function (err, r) { DP.loading = false; if (err || !r || !r.ok) DP.err = (r && r.error) || 'Tidak bisa memuat Display. Coba lagi.'; else { if (!tenang) DP.err = ''; DP.d = r; } dpRender(); }); }
+  function dpPulang() { var hm = document.getElementById('dpHome'), r = dpEl(); if (hm && r && hm.nextSibling !== r) hm.parentNode.insertBefore(r, hm.nextSibling); } /* dp-md */
+  function dpBuka() { dpPulang(); document.getElementById('dashboard').className = 'tab-display'; Array.prototype.forEach.call(document.querySelectorAll('.bottom-nav .nav-item'), function (b) { b.classList.remove('active'); }); DP.view = 'list'; DP.msg = ''; window.scrollTo(0, 0); dpLoad(); }
   window.dpRole = function (role) { var b = document.getElementById('dpOpen'); if (b) b.hidden = ['GPT_FOODS', 'GPT_BW', 'ULTRAS', 'SBA', 'BA_BW', 'AASM'].indexOf(role) < 0; if (DP.d && role) { DP.d = null; DP.lain = null; DP.lainSt = ''; DP.hasil = null; DP.q = ''; DP.cariGagal = ''; } };
   function dpKs(k) { var m = /\(([^)]+)\)/.exec(k); return m ? m[1] : k; }
-  function dpWhy() { var F = DP.f, c = {}; if (!F.kode) return 'Pilih toko dulu.'; if (!F.pasang.length) return 'Pilih kategori produk.'; for (var i = 0; i < F.pasang.length; i++) { var p = F.pasang[i], n = c[p.kat] = (c[p.kat] || 0) + 1, l = dpKs(p.kat) + (n > 1 ? ' ke-' + n : ''); if (!p.a) return 'Ambil foto sebelum ' + l + '.'; if (!p.b) return 'Ambil foto sesudah ' + l + '.'; } return ''; }
-  function dpFoto(i, s, url) { return url ? '<div class="dp-slot"><img src="' + dpE(url) + '" alt="Foto ' + s + '"><button type="button" class="dp-x" data-dpdel="' + i + ':' + s + '" aria-label="Hapus foto ' + s + '">×</button></div>' : '<div class="dp-slot dp-empty' + (DP.f && DP.f.coba ? ' dp-miss' : '') + '"><label class="dp-sumber"><input type="file" accept="image/*" capture="environment" data-dpfile="' + i + ':' + s + '"><span>📷 Kamera</span></label><label class="dp-sumber"><input type="file" accept="image/*" data-dpfile="' + i + ':' + s + '"><span>🖼️ Galeri</span></label></div>'; }
+  function dpWhy() { var F = DP.f, c = {}; if (!F.kode) return 'Pilih toko dulu.'; if (DP.d && DP.d.md && !F.ubah) { if (F.tidak) { if (!F.alasan) return 'Pilih alasan Product Hanger tidak ada.'; if (F.alasan === 'Lainnya' && String(F.ket || '').trim().length < 5) return 'Tulis alasan di Keterangan.'; if (!(F.pasang[0] || {}).a) return 'Ambil foto bukti kondisi toko.'; return ''; } } /* dp-md */ if (!F.pasang.length) return DP.d && DP.d.md ? 'Pilih bagian rak (langkah 2).' : 'Pilih BU yang dipajang (langkah 2).'; for (var i = 0; i < F.pasang.length; i++) { var p = F.pasang[i], n = c[p.kat] = (c[p.kat] || 0) + 1, l = dpKs(p.kat) + (n > 1 ? ' ke-' + n : ''); if (!p.a) return 'Ambil foto sebelum ' + l + '.'; if (!p.b) return 'Ambil foto sesudah ' + l + '.'; } return ''; }
+  function dpFoto(i, s, url) { var pp = DP.f && DP.f.pasang[i], awan = pp && pp[s + 'U'] ? '<span class="dp-awan">☁️ di server</span>' : pp && DP.f.hpOk ? '<span class="dp-awan hp">💾 di HP</span>' : ''; return url ? '<div class="dp-slot"><img src="' + dpE(url) + '" alt="Foto ' + s + '">' + awan + '<button type="button" class="dp-x" data-dpdel="' + i + ':' + s + '" aria-label="Hapus foto ' + s + '">×</button></div>' : (function () { var pa = s === 'b' && DP.f && DP.f.pasang[i] && !DP.f.tidak ? DP.f.pasang[i].a : ''; return '<div class="dp-slot dp-empty' + (DP.f && DP.f.coba ? ' dp-miss' : '') + (pa ? ' dp-acuan" style="background-image:linear-gradient(rgba(255,255,255,.72),rgba(255,255,255,.72)),url(' + pa + ')' : '') + '">' + (pa ? '<div class="dp-ang">📐 Posisi &amp; sudut SAMA dengan foto Sebelum</div>' : ''); })() + '<label class="dp-sumber"><input type="file" accept="image/*" capture="environment" data-dpfile="' + i + ':' + s + '"><span>📷 Kamera</span></label>' + (DP.d && DP.d.md ? '' : '<label class="dp-sumber"><input type="file" accept="image/*" data-dpfile="' + i + ':' + s + '"><span>🖼️ Galeri</span></label>') + '</div>'; } /* dp-md: MD hanya kamera (anti foto lama) */
   function dpJrk(m) { return m < 1000 ? m + ' m' : (m / 1000).toFixed(1).replace('.', ',') + ' km'; }
   function dpTokoRow(t) { return '<button type="button" class="dp-row" data-dptoko="' + dpE(t.k) + '"><b>' + dpE(t.n) + '</b><small>' + (t.m != null ? dpJrk(t.m) + ' · ' : '') + dpE(t.k) + '</small></button>'; }
-  function dpTokoMode() { var m = DP.f.mode || 'saya'; return '<div class="dp-chips dp-c3">' + [['saya', 'Toko saya'], ['dekat', '📍 Terdekat'], ['semua', 'Semua toko']].map(function (x) { return '<button type="button" class="dp-chip' + (m === x[0] ? ' on' : '') + '" data-dpm="' + x[0] + '" aria-pressed="' + (m === x[0]) + '">' + x[1] + '</button>'; }).join('') + '</div>'; }
+  function dpTokoMode() { var m = DP.f.mode || (DP.d.md ? 'dekat' : 'saya'); return '<div class="dp-chips dp-c3">' + (DP.d.md ? [['dekat', '📍 Terdekat'], ['semua', 'Semua toko']] : [['saya', 'Toko saya'], ['dekat', '📍 Terdekat'], ['semua', 'Semua toko']]).map(function (x) { return '<button type="button" class="dp-chip' + (m === x[0] ? ' on' : '') + '" data-dpm="' + x[0] + '" aria-pressed="' + (m === x[0]) + '">' + x[1] + '</button>'; }).join('') + '</div>'; }
   function dpTokoPilih(toko) {
-    var F = DP.f, m = F.mode || 'saya', n = function (x) { return '<div class="dp-note">' + x + '</div>'; };
+    var F = DP.f, m = F.mode || (DP.d && DP.d.md ? 'dekat' : 'saya'), n = function (x) { return '<div class="dp-note">' + x + '</div>'; };
     if (m === 'dekat') { if (F.dekatSt === 'muat') return n('Mencari toko terdekat…'); if (F.dekatSt) return n(dpE(F.dekatSt) + ' <button type="button" class="dp-link" data-dpm="dekat">Coba lagi</button>'); return (F.dekat || []).map(dpTokoRow).join('') || n('Tidak ada toko bertitik lokasi. Pilih Semua toko.'); }
     if (m === 'semua') { if (DP.lainSt === 'muat') return n('Memuat daftar toko…'); if (DP.lainSt === 'gagal') return n('Daftar toko belum termuat. <button type="button" class="dp-link" data-dp="muatlain">Coba lagi</button>'); var all = toko.concat(DP.lain || []).sort(function (a, b) { return a.n < b.n ? -1 : a.n > b.n ? 1 : 0; }), s = F.semua || 50; return all.slice(0, s).map(dpTokoRow).join('') + (all.length > s ? '<button type="button" class="md-btn ghost dp-full" data-dp="semualagi">Tampilkan lagi (' + (all.length - s) + ')</button>' : ''); }
     return toko.slice(0, 60).map(dpTokoRow).join('') || n('Belum ada toko cover. Pilih Terdekat atau Semua toko.');
@@ -4627,21 +4703,32 @@ html { overflow-y: scroll; scrollbar-gutter: stable; }
   function dpMuatLain() { if (DP.lain || DP.lainSt === 'muat') return; DP.lainSt = 'muat'; gasCall('displayTokoLain', [currentPassword, getDeviceId()], function (err, r) { if (err || !r || !r.ok) DP.lainSt = 'gagal'; else { DP.lain = r.toko || []; DP.lainSt = ''; } if (DP.view === 'form') dpRender(); }); }
   function dpForm() {
     var F = DP.f, d = DP.d, q = F.cari.trim().toLowerCase(), toko = d.toko.filter(function (t) { return !q || (t.n + ' ' + t.k).toLowerCase().indexOf(q) >= 0; }), pil = d.toko.filter(function (t) { return t.k === F.kode; })[0], plain = !pil && (DP.lain || []).concat(F.dekat || []).filter(function (t) { return t.k === F.kode; })[0], why = dpWhy(); pil = pil || plain;
-    var h = '<button type="button" class="dp-back" data-dp="kembali">' + (F.ubah ? '‹ Batal, kembali ke laporan' : '‹ Kembali ke Riwayat') + '</button>' + (F.ubah ? '<div class="dp-title">Ubah laporan</div>' : '') + (F.tanya ? '<div class="card dp-konf"><b>Keluar dari form?</b><div class="dp-note">Foto yang belum disimpan akan hilang.</div><div class="dp-two"><button type="button" class="md-btn ghost" data-dp="tetap">Tetap di sini</button><button type="button" class="md-btn danger" data-dp="keluarform">Ya, keluar</button></div></div>' : '') + (why && !DP.busy ? '<div class="dp-why" role="status">⚠️ Belum bisa disimpan: ' + dpE(why) + '</div>' : '') + '<div class="card"><div class="dp-h">Toko</div>';
+    var h = '<button type="button" class="dp-back" data-dp="kembali">' + (F.ubah ? '‹ Batal, kembali ke laporan' : '‹ Kembali ke Riwayat') + '</button>' + (F.ubah ? '<div class="dp-title">Ubah laporan</div>' : '') + (F.tanya ? (F.ubah ? '<div class="card dp-konf"><b>Keluar dari form?</b><div class="dp-note">Foto yang belum disimpan akan hilang.</div><div class="dp-two"><button type="button" class="md-btn ghost" data-dp="tetap">Tetap di sini</button><button type="button" class="md-btn danger" data-dp="keluarform">Ya, keluar</button></div></div>' : '<div class="card dp-konf"><b>Laporan ini belum tersimpan ke server</b><div class="dp-note">Sebaiknya tekan Simpan dulu. Bila belum bisa (misalnya tanpa sinyal), foto boleh disimpan di HP sebagai draf dan dilanjutkan nanti.</div><div class="dp-three"><button type="button" class="md-btn pri" data-dp="tetap">Tetap di sini & simpan</button><button type="button" class="md-btn ghost" data-dp="keluardraf">Keluar, simpan di HP (draf)</button><button type="button" class="md-btn danger" data-dp="keluarform">Buang foto & keluar</button></div></div>') : '') + (why && !DP.busy ? '<div class="dp-why" role="status">⚠️ Belum bisa disimpan: ' + dpE(why) + '</div>' : '') + '<div class="card"><div class="dp-h"><span class="dp-no">1</span>Toko</div>';
     h += F.ubah ? '<div class="dp-pick"><div><b>' + dpE(F.tn) + '</b><small>' + dpE(F.kode) + '</small></div></div><div class="dp-note">Toko dan waktu mengikuti laporan awal.</div>' : pil ? '<div class="dp-pick"><div><b>' + dpE(pil.n) + '</b><small>' + dpE(pil.k) + (plain ? ' · Toko lain' : '') + '</small></div><button type="button" class="md-btn ghost" data-dp="gantitoko">Ganti</button></div>' : '<div class="dp-qw"><input class="dp-in" id="dpCari" type="search" placeholder="Cari nama atau kode toko" value="' + dpE(F.cari) + '" autocomplete="off">' + (F.cari ? '<button type="button" class="dp-clr" data-dp="hapuscaritoko" aria-label="Hapus ketikan">×</button>' : '') + '</div>' + (q ? '' : dpTokoMode()) + '<div class="dp-list">' + dpTokoIsi(toko, q) + '</div>';
     h += '</div>';
     var total = F.pasang.length;
-    h += '<div class="card"><div class="dp-h">Kategori produk</div><div class="dp-chips">' + d.kategori.map(function (k) { var on = F.pasang.some(function (p) { return p.kat === k; }); return '<button type="button" class="dp-chip' + (on ? ' on' : '') + '" data-dpk="' + dpE(k) + '" aria-pressed="' + on + '">' + dpE(dpKs(k)) + '</button>'; }).join('') + '</div>' + (F.katMsg ? '<div class="dp-note">' + dpE(F.katMsg) + '</div>' : '') + '</div>';
+    var nBu = d.kategori.filter(function (k) { return F.pasang.some(function (p) { return p.kat === k; }); }).length; /* dp-alur */
+    if (d.md && !F.ubah && F.kode) h += dpLokWarn(F); /* dp-md: peringatan lokasi (tidak menolak) */
+    if (d.md) h += '<div class="dp-keras" role="alert"><b class="dk-t">⚠️ WAJIB FOTO ASLI KONDISI TOKO SAAT INI</b>Foto <b>Kepala (Product Hanger)</b> diambil langsung di toko ini, hari ini, sebelum dan sesudah dirapikan.<ul><li>DILARANG memakai foto lama, foto toko lain, atau foto dari internet/grup.</li><li>Foto Sebelum &amp; Sesudah dari posisi dan sudut yang sama.</li><li>Foto diperiksa bersama lokasi GPS dan waktu kirim.</li><li>Foto tidak asli dianggap <b>pelanggaran</b> dan akan ditindak.</li></ul></div>'; /* dp-md */
+    else h += '<div class="card"><div class="dp-h"><span class="dp-no">2</span>' + (d.md ? 'Pilih bagian rak yang dirapikan' : 'Pilih BU yang dipajang') + (nBu ? ' <small class="dp-cnt">' + nBu + (d.md ? ' bagian' : ' BU') + ' dipilih</small>' : '') + '</div><div class="dp-note" style="margin:0 0 10px">' + (d.md ? 'Centang <b>semua</b> bagian yang Anda rapikan: Kepala, Badan, Kaki. Boleh lebih dari satu.' : 'Centang <b>semua</b> BU yang dipajang di toko ini, boleh lebih dari satu.') + '</div><div class="dp-chips">' + d.kategori.map(function (k) { var on = F.pasang.some(function (p) { return p.kat === k; }); return '<button type="button" class="dp-chip' + (on ? ' on' : '') + '" data-dpk="' + dpE(k) + '" aria-pressed="' + on + '"><span class="dp-ck" aria-hidden="true">' + (on ? '✓' : '+') + '</span>' + dpE(dpKs(k)) + '</button>'; }).join('') + '</div>' + (F.katMsg ? '<div class="dp-note">' + dpE(F.katMsg) + '</div>' : '') + '</div>';
+    if (d.md && !F.ubah) h += '<div class="dp-phsel" role="group" aria-label="Product Hanger di toko ini"><button type="button" class="' + (F.tidak ? '' : 'on') + '" data-dpph="ada">✅ Ada Product Hanger</button><button type="button" class="tdk' + (F.tidak ? ' on' : '') + '" data-dpph="tidak">🚫 Product Hanger tidak ada</button></div>';
+    h += dpAmanBar(F); /* dp-aman */
+    if (d.md && F.tidak) { h += '<div class="card"><div class="dp-h"><span class="dp-no">3</span>Alasan Product Hanger tidak ada (wajib)</div><div class="dp-chips dp-c3" style="grid-template-columns:1fr">' + DP_ALASAN_PH.map(function (a) { return '<button type="button" class="dp-chip' + (F.alasan === a ? ' on' : '') + '" data-dpal="' + dpE(a) + '">' + dpE(a) + '</button>'; }).join('') + '</div>' + (F.alasan === 'Lainnya' ? '<div class="dp-note">Tulis alasannya di Keterangan (wajib).</div>' : '') + '<div class="dp-h" style="margin-top:14px">Foto bukti kondisi toko (wajib, kamera)</div><div class="dp-note" style="margin:0 0 8px">Foto area tempat Product Hanger seharusnya terpasang, saat ini.</div><div class="dp-slot1">' + dpFoto(0, 'a', (F.pasang[0] || {}).a) + '</div></div>'; }
+    if (nBu && d.md && !F.tidak) h += '<div class="dp-tip">📸 Isi foto <b>Sebelum</b> dan <b>Sesudah</b> product hanger (boleh sampai ' + d.maxPerKat + ' pasang bila ada beberapa PH). Simpan tiap toko, lalu di akhir hari kirim <b>semua toko sekaligus</b> lewat <b>Rekap hari ini</b>, agar grup WhatsApp tidak penuh.<br>📐 Foto <b>Sesudah</b> wajib dari <b>posisi &amp; sudut yang sama</b> dengan foto Sebelum, agar bisa dibandingkan.</div>';
+    else if (nBu) h += '<div class="dp-tip">📸 <b>Langkah 3:</b> isi foto <b>Sebelum</b> dan <b>Sesudah</b> di setiap BU di bawah. Satu BU boleh beberapa pasang foto (maks ' + d.maxPerKat + '). Setelah disimpan, <b>semua BU jadi 1 laporan</b> dan dikirim ke WhatsApp <b>sekali saja</b>.<br>📐 Foto <b>Sesudah</b> diambil dari <b>posisi &amp; sudut yang sama</b> dengan foto Sebelum, agar bisa dibandingkan.</div>';
     d.kategori.forEach(function (k) {
-      var idx = []; F.pasang.forEach(function (p, i) { if (p.kat === k) idx.push(i); }); if (!idx.length) return;
-      h += '<div class="card"><div class="dp-h">' + dpE(k) + '</div>';
-      idx.forEach(function (i, n) { var p = F.pasang[i]; h += '<div class="dp-pr">' + (idx.length > 1 ? '<div class="dp-hrow"><small>Foto ' + (n + 1) + '</small><button type="button" class="dp-link" data-dphapus="' + i + '">Hapus</button></div>' : '') + '<div class="dp-two"><div><div class="dp-cap">Sebelum</div>' + dpFoto(i, 'a', p.a) + '</div><div><div class="dp-cap">Sesudah</div>' + dpFoto(i, 'b', p.b) + '</div></div></div>'; });
-      h += idx.length < d.maxPerKat ? '<button type="button" class="md-btn ghost dp-full dp-add" data-dptambah="' + dpE(k) + '">+ Foto ' + dpE(dpKs(k)) + '</button>' : '<div class="dp-note">Maksimal ' + d.maxPerKat + ' pasang per kategori.</div>';
+      var idx = []; F.pasang.forEach(function (p, i) { if (p.kat === k) idx.push(i); }); if (!idx.length || F.tidak) return; /* dp-md: kartu tidak ada digambar terpisah */
+      h += '<div class="card"><div class="dp-h"><span class="dp-no">3</span>Foto ' + dpE(k) + ' ' + (d.maxPerKat > 1 ? '<small class="dp-cnt">' + idx.length + ' dari ' + d.maxPerKat + ' pasang</small>' : '') + '</div>';
+      idx.forEach(function (i, n) { var p = F.pasang[i]; h += '<div class="dp-pr"><div class="dp-hrow"><small>Pasang ' + (n + 1) + '</small>' + (idx.length > 1 ? '<button type="button" class="dp-link" data-dphapus="' + i + '">Hapus</button>' : '') + '</div>' + '<div class="dp-two"><div><div class="dp-cap">Sebelum</div>' + dpFoto(i, 'a', p.a) + '</div><div><div class="dp-cap">Sesudah</div>' + dpFoto(i, 'b', p.b) + '</div></div></div>'; });
+      h += idx.length < d.maxPerKat ? '<button type="button" class="md-btn ghost dp-full dp-add" data-dptambah="' + dpE(k) + '">+ Tambah pasang foto ' + dpE(dpKs(k)) + '</button>' : (d.maxPerKat > 1 ? '<div class="dp-note">Maksimal ' + d.maxPerKat + ' pasang per kategori.</div>' : '');
       h += '</div>';
     });
-    h += '<div class="card"><div class="dp-h">Keterangan (opsional)</div><textarea class="dp-in" id="dpKet" rows="2" maxlength="500">' + dpE(F.ket) + '</textarea><div class="dp-note">📍 ' + dpE(F.gpsMsg) + '</div></div>';
+    h += '<div class="card"><div class="dp-h"><span class="dp-no">4</span>Keterangan (opsional)</div><textarea class="dp-in" id="dpKet" rows="2" maxlength="500">' + dpE(F.ket) + '</textarea><div class="dp-note">📍 ' + dpE(F.gpsMsg) + '</div></div>';
     if (DP.err) h += '<div class="dp-err">' + dpE(DP.err) + '</div>';
-    h += '<button type="button" class="md-btn pri dp-full" data-dp="simpan"' + (DP.busy ? ' disabled' : '') + '>' + (DP.busy ? (DP.prog || 'Menyimpan…') : (F.ubah ? 'Simpan Perubahan' : 'Simpan Display')) + '</button>';
+    h += F.ubah ? '' : dpAutoHtml(F); /* dp-auto */
+    h += '<button type="button" class="md-btn pri dp-full" data-dp="simpan"' + (DP.busy ? ' disabled' : '') + '>' + (DP.busy ? (DP.prog || 'Menyimpan…') : (F.ubah ? 'Simpan Perubahan' : d.md ? 'Selesai & simpan laporan' : 'Simpan & lanjut kirim WhatsApp')) + '</button>';
+    if (!F.ubah && nBu && !DP.busy && d.md) h += '<div class="dp-sum">' + (F.tidak ? 'Product Hanger tidak ada · 1 foto bukti' : total + ' pasang foto product hanger') + ' · dikirim nanti lewat Rekap hari ini</div>';
+    else if (!F.ubah && nBu && !DP.busy) h += '<div class="dp-sum">' + nBu + ' BU · ' + total + ' pasang foto → 1 laporan, ' + nBu + ' gambar, dikirim sekali</div>'; /* dp-alur */
     return h;
   }
   var DP_BLN = ['', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
@@ -4656,9 +4743,11 @@ html { overflow-y: scroll; scrollbar-gutter: stable; }
     d.riwayat.forEach(function (r) { var t = String(r.w).slice(0, 10); if (tgls.indexOf(t) < 0) tgls.push(t); }); if (tgls.indexOf(DP.tgl) < 0) DP.tgl = '';
     var siap = q && DP.hasil && DP.hasil.q === q; l = siap ? DP.hasil.riwayat : d.riwayat.filter(function (r) { return q ? (r.tn + ' ' + r.k + ' ' + r.nama).toLowerCase().indexOf(q) >= 0 : (!DP.tgl || String(r.w).slice(0, 10) === DP.tgl) && (!DP.wa || (DP.wa === 'sudah') === !!r.wa); });
     var tampil = l.slice(0, DP.shown), g = '', nS = d.riwayat.filter(function (r) { return r.wa; }).length, nB = d.riwayat.length - nS, waSel = d.riwayat.length ? '<select class="dp-in dp-wide' + (q ? ' dp-dim' : '') + '" id="dpWaF" aria-label="Status kirim WhatsApp"><option value="">Semua status WhatsApp</option><option value="belum"' + (DP.wa === 'belum' ? ' selected' : '') + '>Belum dikirim (' + nB + ')</option><option value="sudah"' + (DP.wa === 'sudah' ? ' selected' : '') + '>Sudah dikirim (' + nS + ')</option></select>' : '';
-    var h = '<div class="dp-title">Laporan Display Pajangan</div>' + (DP.msg ? '<div class="dp-ok">' + dpE(DP.msg) + '</div>' : '');
+    var h = (d.md ? '<button type="button" class="dp-back" data-dp="mdkeluar">‹ Kembali ke Beranda MD</button>' : '') + '<div class="dp-title">' + (d.md ? 'Laporan Display MD' : 'Laporan Display Pajangan') + '</div>' + (DP.msg ? '<div class="dp-ok">' + dpE(DP.msg) + '</div>' : '');
     if (DP.err) h += '<div class="dp-err">' + dpE(DP.err) + '</div>';
-    if (d.tulis) h += '<button type="button" class="md-btn pri dp-full" data-dp="baru">+ Input Display</button>';
+    if (d.tulis) h += dpdKartu(); /* dp-draf */
+    if (d.md && d.tulis) h += dpRekapKartu(); /* dp-md */
+    if (d.tulis) h += '<button type="button" class="md-btn pri dp-full" data-dp="baru">' + (d.md ? '+ Laporan toko baru' : '+ Input Display') + '</button>';
     h += '<div class="dp-fil">' + ((d.bulanList || []).length ? '<select class="dp-in' + (q ? ' dp-dim' : '') + '" id="dpBulan" aria-label="Pilih bulan">' + d.bulanList.map(function (b) { return '<option value="' + b + '"' + (b === d.bulan ? ' selected' : '') + '>' + dpBln(b) + '</option>'; }).join('') + '</select>' : '') + (tgls.length ? '<select class="dp-in' + (q ? ' dp-dim' : '') + '" id="dpTglF" aria-label="Pilih tanggal"><option value="">Semua tanggal</option>' + tgls.map(function (t) { return '<option value="' + t + '"' + (t === DP.tgl ? ' selected' : '') + '>' + dpE(dpTgl(t + ' ')) + '</option>'; }).join('') + '</select>' : '') + waSel + '</div><div class="dp-qw"><input class="dp-in" id="dpQ" type="search" placeholder="Cari toko' + (d.tulis ? '' : ' atau field force') + '" value="' + dpE(DP.q) + '" autocomplete="off">' + (DP.q ? '<button type="button" class="dp-clr" data-dp="hapuscari" aria-label="Hapus ketikan">×</button>' : '') + '</div>' + (q || DP.tgl || DP.wa || ((d.bulanList || [])[0] && d.bulan !== d.bulanList[0]) ? '<button type="button" class="dp-reset" data-dp="resetf">✕ Hapus semua filter</button>' : '');
     if (q) h += '<div class="dp-count">' + (siap ? '🔎 ' + l.length + ' hasil di semua bulan' + (DP.hasil.lebih ? ', terbaru saja' : '') + ' (filter diabaikan saat mencari)' : DP.cariGagal === q ? '⚠️ Gagal mencari di semua bulan. Yang tampil hanya bulan terpilih.' : '🔎 Mencari di semua bulan…') + '</div>'; else if (l.length) h += '<div class="dp-count">' + l.length + ' kiriman</div>';
     h += tampil.length ? tampil.map(function (r) { var t = dpTgl(r.w), x = t !== g ? '<div class="dp-grp">' + dpE(t) + '</div>' : ''; g = t; return x + '<button type="button" class="card dp-item" data-dpopen="' + dpE(r.id) + '"><b>' + dpE(r.tn) + '</b><small>' + dpE(String(r.w).slice(11)) + (d.tulis ? '' : ' · ' + dpE(r.nama || r.d)) + ' · ' + r.pasang.length + ' pasang foto ' + dpWaB(r.wa) + '</small><span aria-hidden="true">›</span></button>'; }).join('') : '<div class="card dp-note dp-c">' + (q ? (siap || DP.cariGagal === q ? 'Tidak ada yang cocok.' : 'Mencari…') : 'Belum ada riwayat Display.') + '</div>';
@@ -4671,6 +4760,92 @@ html { overflow-y: scroll; scrollbar-gutter: stable; }
     if (DP.hapus === r.id) return '<div class="card dp-konf"><b>Hapus laporan ini?</b><div class="dp-note">Laporan hilang dari riwayat.</div><div class="dp-two"><button type="button" class="md-btn ghost" data-dp="hapusbatal"' + (DP.busy ? ' disabled' : '') + '>Batal</button><button type="button" class="md-btn danger" data-dp="hapusya"' + (DP.busy ? ' disabled' : '') + '>' + (DP.busy ? 'Menghapus…' : 'Ya, hapus') + '</button></div></div>';
     return '<div class="dp-two dp-act"><button type="button" class="md-btn ghost" data-dp="ubah">Ubah</button><button type="button" class="md-btn dp-del" data-dp="hapus">Hapus</button></div>';
   }
+  /* dp-md: rekap harian. Laporan per toko disimpan sepanjang hari; yang belum dikirim pada satu tanggal dikirim SEKALI (ringkasan + 1 gambar per toko). */
+  function dpBelum(tgl) { return DP.d.riwayat.filter(function (r) { return !r.wa && String(r.w).slice(0, 10) === tgl; }); }
+  /* dp-draf (10 Nov 2026, keputusan user): form yang sudah berfoto disimpan otomatis di HP (IndexedDB), agar foto tidak hilang bila Chrome tertutup/HP mati/tanpa sinyal.
+     Draf menyimpan jam foto & GPS asli; dipulihkan dari daftar Laporan Display (Lanjutkan/Buang). Dihapus sesudah tersimpan ke server atau dibuang. */
+  var DPD_DB = 'rsp_dpdraf', DPD_ST = 'draf';
+  function dpdOwner() { var s = String(typeof currentPassword !== 'undefined' ? currentPassword : '') + '|', h = 5381; for (var i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) | 0; return 'u' + (h >>> 0).toString(36); }
+  function dpdBuka(cb) { try { var rq = indexedDB.open(DPD_DB, 1); rq.onupgradeneeded = function () { rq.result.createObjectStore(DPD_ST); }; rq.onsuccess = function () { cb(rq.result); }; rq.onerror = function () { cb(null); }; } catch (e) { cb(null); } }
+  function dpdTulis(key, val, cb) { var done = function (ok) { if (cb) { cb(ok); cb = null; } }; if (window.__DPD_RUSAK) { done(false); return; } dpdBuka(function (db) { if (!db) { done(false); return; } try { var tx = db.transaction(DPD_ST, 'readwrite'); tx.oncomplete = function () { done(true); }; tx.onerror = tx.onabort = function () { done(false); }; if (val == null) tx.objectStore(DPD_ST).delete(key); else tx.objectStore(DPD_ST).put(val, key); } catch (e) { done(false); } }); }
+  function dpdBaca(key, cb) { dpdBuka(function (db) { if (!db) { cb(null); return; } try { var rq = db.transaction(DPD_ST, 'readonly').objectStore(DPD_ST).get(key); rq.onsuccess = function () { cb(rq.result || null); }; rq.onerror = function () { cb(null); }; } catch (e) { cb(null); } }); }
+  var dpdT = null;
+  function dpdSimpan() { clearTimeout(dpdT); dpdT = setTimeout(function () { var F = DP.f; if (!F || F.ubah || !F.pasang.some(function (p) { return p.a || p.b; })) return; var nama = ((DP.d && DP.d.toko || []).concat(DP.lain || [], F.dekat || []).filter(function (t) { return t.k === F.kode; })[0] || {}).n || F.tnDraf || ''; F.tnDraf = nama; var x = JSON.parse(JSON.stringify(F)); delete x.tanya; delete x.coba; DP.draf = { o: dpdOwner(), t: Date.now(), F: x }; dpdTulis(dpdOwner(), DP.draf); }, 500); }
+  function dpdTulisKini(cb) { var F = DP.f; if (!F || F.ubah || !F.pasang.some(function (p) { return p.a || p.b; })) { if (cb) cb(true); return; } clearTimeout(dpdT); var nama = ((DP.d && DP.d.toko || []).concat(DP.lain || [], F.dekat || []).filter(function (t) { return t.k === F.kode; })[0] || {}).n || F.tnDraf || ''; F.tnDraf = nama; var x = JSON.parse(JSON.stringify(F)); delete x.tanya; delete x.coba; DP.draf = { o: dpdOwner(), t: Date.now(), F: x }; dpdTulis(dpdOwner(), DP.draf, function (ok) { F.hpOk = ok; if (cb) cb(ok); }); }
+  /* dp-aman: dipanggil tiap foto masuk. 1) salin ke HP segera & cek hasilnya; 2) unggah ke server di latar (bila ada sinyal) */
+  function dpAman(F, i, sd) {
+    dpdTulisKini(function () { if (DP.f === F) dpRender(); });
+    var p = F.pasang[i]; if (window.__DP_NO_BG || !p || !p[sd] || p[sd + 'U'] || p[sd + 'Up'] || F.ubah) return; var data = p[sd]; p[sd + 'Up'] = 1;
+    google.script.run.withSuccessHandler(function (r) { p[sd + 'Up'] = 0; if (r && r.ok && p[sd] === data && r[sd]) { p[sd + 'U'] = r[sd]; dpToast('☁️ Foto tersimpan otomatis di server', 'good'); if (F.tidak && sd === 'a') p.bU = r.a; dpdTulisKini(function () { if (DP.f === F) dpRender(); }); } })
+      .withFailureHandler(function () { p[sd + 'Up'] = 0; dpToast('📶 Tanpa sinyal: foto aman di HP, dikirim saat ada sinyal'); }).displayFotoUp(currentPassword, getDeviceId(), F.cid, i + 1, sd === 'a' ? data : '', sd === 'b' ? data : '');
+  }
+  function dpToast(m, k) { try { if (typeof showToast === 'function') showToast(m, k); } catch (e) {} }
+  function dpSig(F) { return [F.kode, F.ket, F.alasan, F.tidak ? 1 : 0].concat(F.pasang.map(function (p) { return (p.a ? p.a.length : 0) + ':' + (p.b ? p.b.length : 0); })).join('|'); }
+  function dpAutoJadwal() {
+    var F = DP.f; if (!F || F.ubah || DP.view !== 'form' || DP.busy || dpWhy() || !F.gagalAuto) { if (F) F.autoAt = 0; return; } /* keputusan user 10 Nov: simpan manual; otomatis hanya coba ulang sesudah gagal */
+    var sig = dpSig(F); if (F.autoTunda === sig) return; if (F.autoSig === sig && F.autoAt) return;
+    var ms = window.__DP_AUTO_MS || (F.gagalAuto ? 30000 : 10000); F.autoSig = sig; F.autoAt = Date.now() + ms;
+    setTimeout(function () { if (DP.f !== F || F.autoSig !== sig || F.autoTunda === sig || DP.busy || dpWhy() || !F.autoAt) return; F.auto = 1; F.autoAt = 0; dpSimpan(); }, ms);
+  }
+  function dpAutoHtml(F) {
+    if (F.ubah || DP.busy) return ''; if (F.gagalAuto) return '<div class="dp-auto bad" role="alert">📶 <b>Belum tersimpan ke server</b> (sinyal lemah/tidak ada). Laporan dan foto aman di HP. Dicoba lagi otomatis tiap 30 detik, atau tekan Simpan di bawah saat sinyal ada.</div>';
+    return ''; var sig = dpSig(F); if (F.autoTunda === sig) return '<div class="dp-auto">⏸️ Simpan otomatis ditunda. Tambahkan foto lagi, atau tekan Simpan bila sudah selesai.</div>';
+    return '<div class="dp-auto">✅ Laporan lengkap. <b>Tersimpan otomatis dalam beberapa detik</b>.<div class="dp-two"><button type="button" class="md-btn ghost" data-dp="autotunda">Tunda, tambah foto lagi</button><button type="button" class="md-btn pri" data-dp="simpan">Simpan sekarang</button></div></div>';
+  }
+  window.addEventListener('online', function () { var F = DP.f; if (F && F.gagalAuto && !DP.busy && !dpWhy()) { F.auto = 1; dpSimpan(); } });
+  function dpAmanBar(F) { if (F.ubah || !F.pasang.some(function (p) { return p.a || p.b; })) return ''; var n = 0, up = 0; F.pasang.forEach(function (p) { ['a', 'b'].forEach(function (k) { if (p[k] && !(k === 'b' && F.tidak)) { n++; if (p[k + 'U']) up++; } }); });
+    if (F.hpOk === false) return '<div class="dp-aman bad" role="alert">⚠️ Foto TIDAK bisa disalin ke memori HP ini' + (up === n ? ', tetapi semua foto sudah aman di server.' : '. Jangan tutup aplikasi, tekan Simpan secepatnya. (' + up + ' dari ' + n + ' foto sudah di server)') + '</div>';
+    return '<div class="dp-aman">💾 ' + n + ' foto tersimpan di HP' + (up ? ' · ☁️ ' + up + ' sudah di server' : ' · belum ke server (menunggu sinyal)') + '. Aman bila aplikasi tertutup.</div>'; }
+  function dpdHapus() { clearTimeout(dpdT); DP.draf = null; dpdTulis(dpdOwner(), null); }
+  function dpdMuat(cb) { dpdBaca(dpdOwner(), function (d) { DP.draf = d && d.o === dpdOwner() && Date.now() - d.t < 7 * 864e5 ? d : null; if (cb) cb(); }); }
+  function dpdKartu() {
+    var d = DP.draf; if (!d || !d.F || (DP.f && DP.view === 'form')) return ''; var F = d.F, n = 0; F.pasang.forEach(function (p) { if (p.a) n++; if (p.b && p.b !== p.a) n++; });
+    var jam = function (t) { var x = new Date(t), p = function (v) { return ('0' + v).slice(-2); }; return p(x.getHours()) + '.' + p(x.getMinutes()) + ' · ' + dpTgl(p(x.getDate()) + '/' + p(x.getMonth() + 1) + '/' + x.getFullYear() + ' '); };
+    return '<div class="dp-draf" role="alert"><b class="dd-t">📝 Ada laporan belum tersimpan</b>' + dpE(F.tnDraf || F.kode || 'Toko belum dipilih') + ' · ' + n + ' foto · diambil ' + dpE(jam(F.t0 || d.t)) + '<div class="dp-note" style="color:inherit">Foto aman di HP ini. Lanjutkan lalu tekan Simpan saat ada sinyal.</div><div class="dp-two"><button type="button" class="md-btn ghost" data-dp="drafbuang">Buang</button><button type="button" class="md-btn pri" data-dp="draflanjut">Lanjutkan</button></div></div>';
+  }
+  window.dpBukaDraf = function () { if (!DP.draf || !DP.draf.F) return; var md = document.getElementById('mdScreen'); if (md && !md.hidden && window.mdBukaDisplay) window.mdBukaDisplay(); else dpBuka(); DP.f = DP.draf.F; DP.view = 'form'; DP.open = null; DP.rep = null; DP.msg = ''; dpMuatLain(); dpRender(); window.scrollTo(0, 0); };
+  window.dpDraftInfo = function () { if (DP.drafO !== dpdOwner()) { DP.drafO = dpdOwner(); dpdMuat(function () { if (window.mdRepaint) window.mdRepaint(); }); } return DP.draf && DP.draf.o === dpdOwner() ? DP.draf : null; };
+  function dpLokWarn(F) {
+    if (!F.gps) return '<div class="dp-lok bad" role="alert">📍 <b>Lokasi GPS belum terambil.</b> Nyalakan GPS. Laporan tetap bisa disimpan, tetapi ditandai <b>tanpa lokasi</b> di rekap.</div>';
+    var j = F.jarak; if (!j || j.kode !== F.kode) { dpCekJarak(F); return '<div class="dp-lok">📍 Memeriksa jarak ke titik toko…</div>'; }
+    if (j.m == null) return '<div class="dp-lok">📍 Titik lokasi toko ini belum ada di data. Laporan tetap tersimpan.</div>';
+    return j.m > 100 ? '<div class="dp-lok bad" role="alert">⚠️ <b>Posisi Anda ± ' + j.m + ' m dari titik toko</b> (batas 100 m). Pastikan Anda benar berada di toko ini. Laporan tetap bisa disimpan, tetapi ditandai <b>di luar lokasi</b> dan terlihat di rekap.</div>' : '<div class="dp-lok ok">✅ Posisi sesuai: ± ' + j.m + ' m dari titik toko.</div>';
+  }
+  function dpCekJarak(F) { if (F.jarakBusy === F.kode) return; F.jarakBusy = F.kode; var k = F.kode; gasCall('displayJarak', [currentPassword, getDeviceId(), k, F.gps.lat, F.gps.lng], function (err, r) { F.jarakBusy = ''; F.jarak = { kode: k, m: !err && r && r.ok ? r.m : null }; if (DP.f === F) dpRender(); }); }
+  var DP_ALASAN_PH = ['Belum pernah dipasang', 'Rusak / hilang', 'Dilepas pemilik toko', 'Tertutup barang / tidak terlihat', 'Lainnya']; /* dp-md */
+  function dpRekapKartu() {
+    var hari = dpJam().slice(0, 10), per = {}, urut = [];
+    DP.d.riwayat.forEach(function (r) { if (r.wa) return; var t = String(r.w).slice(0, 10); if (!per[t]) { per[t] = 0; urut.push(t); } per[t]++; });
+    var nHari = per[hari] || 0, sudah = DP.d.riwayat.filter(function (r) { return r.wa && String(r.w).slice(0, 10) === hari; }).length;
+    var dr = window.dpDraftInfo && window.dpDraftInfo(), h = '<div class="card dp-rekap"><div class="dp-h">📤 Rekap hari ini</div>' + (dr ? '<div class="dp-lok bad" style="margin:6px 0 8px">📝 Masih ada 1 laporan <b>belum disimpan</b>' + (dr.F && dr.F.tnDraf ? ' (' + dpE(dr.F.tnDraf) + ')' : '') + '. Simpan dulu agar ikut rekap. <button type="button" class="dp-link" data-dp="draflanjut">Lanjutkan</button></div>' : '') + '<div class="dp-note">Simpan laporan tiap toko dulu. Di akhir hari kirim <b>semua toko sekaligus</b> ke WhatsApp, cukup 1 kali.</div>';
+    h += nHari ? '<button type="button" class="md-btn pri dp-full" data-dprekap="' + hari + '">Buat rekap & kirim WhatsApp (' + nHari + ' toko)</button>' : '<div class="dp-note dp-c" style="margin-top:10px">' + (sudah ? '✅ Semua laporan hari ini sudah dikirim (' + sudah + ' toko).' : 'Belum ada laporan toko hari ini.') + '</div>';
+    var lain = urut.filter(function (t) { return t !== hari; });
+    if (lain.length) h += '<div class="dp-note" style="margin-top:10px">⚠️ Belum dikirim dari hari sebelumnya:</div><div class="dp-rlain">' + lain.map(function (t) { return '<button type="button" data-dprekap="' + t + '">Rekap ' + dpE(dpTgl(t + ' ')) + ' · ' + per[t] + ' toko</button>'; }).join('') + '</div>';
+    return h + '</div>';
+  }
+  function dpRingkas(tgl, nama, L) {
+    var W = 1080, H = 300 + L.length * 64 + 60, c = document.createElement('canvas'); c.width = W; c.height = H; var g = c.getContext('2d'), gr = g.createLinearGradient(0, 0, W, 190);
+    gr.addColorStop(0, '#7A35E6'); gr.addColorStop(1, '#46188F'); g.fillStyle = '#FFFFFF'; g.fillRect(0, 0, W, H); g.fillStyle = gr; g.fillRect(0, 0, W, 200);
+    g.fillStyle = '#FFFFFF'; g.font = '600 28px sans-serif'; g.fillText('Rekap Display MD', 36, 56); g.font = '700 44px sans-serif'; g.fillText(tgl + ' · ' + L.length + ' toko', 36, 116); g.font = '500 28px sans-serif'; g.fillText(String(nama || ''), 36, 166);
+    L.forEach(function (r, i) { var y = 268 + i * 64; g.fillStyle = i % 2 ? '#FFFFFF' : '#F6F1FE'; g.fillRect(24, y - 42, W - 48, 64); g.fillStyle = '#2A1650'; g.font = '700 30px sans-serif'; var t = (i + 1) + '. ' + r.tn; while (g.measureText(t).width > 640 && t.length > 6) t = t.slice(0, -2); g.fillText(t, 40, y); g.fillStyle = '#5B22B8'; g.font = '600 24px sans-serif'; g.fillText(String(r.w).slice(11) + ' · ' + dpKelompok(r.pasang).map(function (x) { return x.kat; }).join(', '), 700, y); });
+    return new Promise(function (ok) { c.toBlob(ok, 'image/jpeg', 0.92); });
+  }
+  function dpRekap(tgl) {
+    var L = dpBelum(tgl); if (!L.length || DP.rep) return; var nama = L[0].nama || '';
+    var R = DP.rep = { busy: true, done: 0, total: L.length + 1, blobs: [], urls: [], msg: '', err: '', ids: L.map(function (r) { return r.id; }), tn: 'Rekap ' + tgl, rekap: true };
+    var nTdk = L.filter(function (r) { return r.pasang.some(function (p) { return p.kat === 'Product Hanger tidak ada'; }); }).length, nCek = L.filter(function (r) { return /⚠️|\[Foto diambil/.test(String(r.ket || '')); }).length; /* keputusan user 10 Nov: keterangan singkat, rincian per toko ada di gambar */
+    R.cap = ['*REKAP DISPLAY MD*', tgl + (nama ? ' · ' + nama : ''), L.length + ' toko · ' + (L.length - nTdk) + ' PH dirapikan' + (nTdk ? ' · ' + nTdk + ' PH tidak ada' : '')].filter(Boolean).join('\n');
+    dpRender(); window.scrollTo(0, 0);
+    var tambah = function (b) { R.blobs.push(b); R.urls.push(URL.createObjectURL(b)); R.done = R.blobs.length; if (DP.rep === R) dpRender(); };
+    var C = DP.fotoC = DP.fotoC || {}, foto = function (p) { if (C[p.fid]) return Promise.resolve(C[p.fid]); return new Promise(function (ok, no) { google.script.run.withSuccessHandler(function (x) { if (x && x.ok) { C[p.fid] = x; ok(x); } else no(); }).withFailureHandler(no).displayFoto(currentPassword, getDeviceId(), p.fid); }); }; /* dp-cepat: paralel per toko + cache */
+    dpRingkas(tgl, nama, L).then(tambah).then(function () {
+      return L.reduce(function (pr, r, i) { return pr.then(function () { return Promise.all(r.pasang.map(foto)).then(function (ps) { var tdk = ps.some(function (x) { return x.kat === 'Product Hanger tidak ada'; }), g = tdk ? { kat: String(r.ket || 'Product Hanger tidak ada').replace(/\s*\[[^\]]*\]/g, '').slice(0, 60), items: ps.slice(0, 1), lbl: ['Tidak ada PH'], tidak: true } : { kat: 'Product Hanger · ' + ps.length + ' pasang', items: ps, lbl: ps.map(function (x, j) { return 'PH ' + (j + 1); }) }; return dpGambar({ tn: r.tn, w: r.w, nama: r.nama }, g, i + 1, L.length).then(tambah); }); }); }, Promise.resolve());
+    }).then(function () { R.busy = false; if (DP.rep === R) dpRender(); }, function () { R.busy = false; R.err = 'Foto toko tidak bisa diambil. Periksa sinyal lalu coba lagi.'; if (DP.rep === R) dpRender(); });
+  }
+  function dpTandaiBanyak(ids) {
+    google.script.run.withSuccessHandler(function (r) { if (!r || !r.ok) { DP.err = (r && r.error) || 'Tanda belum tersimpan.'; if (DP.rep) DP.rep.msg = DP.err; dpRender(); return; } DP.err = ''; DP.d.riwayat.forEach(function (x) { if (ids.indexOf(x.id) >= 0) x.wa = true; }); if (DP.rep) DP.rep.sent = true; dpRender(); dpLoad(true); })
+      .withFailureHandler(function () { DP.err = 'Koneksi terputus. Tanda belum tersimpan.'; if (DP.rep) DP.rep.msg = DP.err; dpRender(); }).displayTandaiBanyak(currentPassword, getDeviceId(), ids, true);
+  }
   function dpDetail(r) {
     var h = '<button type="button" class="dp-back" data-dp="tutup">‹ Kembali ke Riwayat</button>' + (DP.msg ? '<div class="dp-ok">' + dpE(DP.msg) + '</div>' : '') + (DP.err ? '<div class="dp-err">' + dpE(DP.err) + '</div>' : '') + '<div class="card"><b class="dp-big">' + dpE(r.tn) + '</b><div class="dp-note">' + dpE(r.k) + '</div><div class="dp-note">' + dpE(r.w) + ' · ' + dpE(r.nama || r.d) + '</div>' + (r.ket ? '<div class="dp-ket">' + dpE(r.ket) + '</div>' : '') + (r.lat != null ? '<a class="dp-link" target="_blank" rel="noopener" href="https://maps.google.com/?q=' + r.lat + ',' + r.lng + '">Lihat lokasi</a>' : '') + '</div>';
     r.pasang.forEach(function (p, i) { h += '<div class="card"><div class="dp-h">' + (i + 1) + '. ' + dpE(p.kat) + '</div><div class="dp-two"><div><div class="dp-cap">Sebelum</div><img class="dp-img" loading="lazy" src="' + dpE(p.a) + '" alt="Foto sebelum"></div><div><div class="dp-cap">Sesudah</div><img class="dp-img" loading="lazy" src="' + dpE(p.b) + '" alt="Foto sesudah"></div></div></div>'; });
@@ -4681,14 +4856,24 @@ html { overflow-y: scroll; scrollbar-gutter: stable; }
     var R = DP.rep, h = '<button type="button" class="dp-back" data-dp="reptutup">‹ Kembali</button><div class="dp-title">Laporan WhatsApp</div>';
     if (R.err) return h + '<div class="dp-err">' + dpE(R.err) + '</div>';
     if (R.busy) return h + '<div class="card dp-note dp-c">Membuat gambar ' + R.done + ' dari ' + R.total + '…</div>';
-    h += '<button type="button" class="md-btn pri dp-full" data-dp="kirim">Kirim ke WhatsApp</button>' + (R.msg ? '<div class="dp-note dp-c">' + dpE(R.msg) + '</div>' : '') + (R.id && DP.d.tulis ? '<div class="dp-wr">' + dpWaB(R.sent) + (R.sent ? '' : '<button type="button" class="dp-link" data-dpwa="' + dpE(R.id) + ':1">Tandai sudah dikirim</button>') + '</div>' : '');
+    /* dp-wa: 1 kali kirim = semua gambar (1 per BU) + keterangan. Konfirmasi manual sesudah bagikan; jalur cadangan utk HP 2 WhatsApp */
+    var tulis = (R.id || R.ids) && DP.d.tulis, n = R.urls.length, tandai = function (cls, lbl) { return '<button type="button" class="' + cls + '" ' + (R.ids ? 'data-dp="waya"' : 'data-dpwa="' + dpE(R.id) + ':1"') + '>' + lbl + '</button>'; };
+    h += R.rekap ? '<div class="dp-tip">Rekap ini berisi <b>' + n + ' gambar</b> (1 ringkasan + 1 per toko) dan daftar toko di keterangan. Semuanya terkirim <b>sekaligus</b> dalam 1 kali kirim.</div>' : '<div class="dp-tip">Laporan ini berisi <b>' + n + ' gambar</b> (1 per BU) dan keterangan. Semuanya terkirim <b>sekaligus</b> dalam 1 kali kirim.</div>';
+    if (R.sent) h += '<div class="dp-ok">✅ Laporan sudah ditandai terkirim.</div>';
+    else if (R.tanya) h += '<div class="card dp-konf dp-tanya"><b>Laporan sudah masuk ke grup WhatsApp?</b><div class="dp-note">Cek di WhatsApp: ' + n + ' gambar dan keterangan sudah terkirim.</div><div class="dp-two"><button type="button" class="md-btn ghost" data-dp="watidak">Belum terkirim</button><button type="button" class="md-btn pri" data-dp="waya">Ya, sudah terkirim</button></div></div>';
+    h += '<button type="button" class="md-btn pri dp-full" data-dp="kirim">' + (R.tanya || R.sent ? 'Kirim ulang ke WhatsApp' : 'Kirim ke WhatsApp') + '</button>' + (R.msg ? '<div class="dp-note dp-c">' + dpE(R.msg) + '</div>' : '');
+    if (!R.alt) h += '<button type="button" class="dp-altbtn" data-dp="altbuka">HP punya 2 WhatsApp atau tidak pindah ke WhatsApp? Pakai cara ini</button>';
+    else h += '<div class="card dp-alt"><b>Cara kirim manual (HP dengan 2 WhatsApp)</b><ol><li>Tekan <b>Simpan gambar ke HP</b> (' + n + ' gambar).</li><li>Tekan <b>Salin keterangan</b>.</li><li>Buka WhatsApp yang biasa dipakai, buka grup laporan, lampirkan ' + n + ' gambar dari Galeri, tempel keterangan, lalu kirim.</li>' + (tulis ? '<li>Kembali ke sini dan tekan <b>Tandai sudah dikirim</b>.</li>' : '') + '</ol>' +
+      '<button type="button" class="md-btn ghost dp-full" data-dp="simpangal">' + (R.simpan ? '✓ Gambar tersimpan · simpan lagi' : '1. Simpan gambar ke HP') + '</button><button type="button" class="md-btn ghost dp-full" data-dp="salincap">' + (R.salin ? '✓ Keterangan disalin · salin lagi' : '2. Salin keterangan') + '</button>' +
+      (R.capLihat ? '<textarea class="dp-in" readonly rows="5" style="margin-top:8px">' + dpE(R.cap || '') + '</textarea>' : '') + (tulis && !R.sent ? tandai('md-btn pri dp-full', 'Tandai sudah dikirim') : '') + '</div>';
+    if (tulis && !R.alt && !R.sent && !R.tanya) h += '<div class="dp-wr">' + dpWaB(false) + tandai('dp-link', 'Tandai sudah dikirim') + '</div>';
     return h + R.urls.map(function (u) { return '<img class="dp-rep" src="' + u + '" alt="Gambar laporan">'; }).join('');
   }
   function dpRender() {
     var el = dpEl(); if (!el) return; var a = document.activeElement, fid = a && a.id, pos = a && a.selectionStart, h;
     if (!DP.d) h = DP.err ? '<div class="dp-err">' + dpE(DP.err) + '</div><button type="button" class="md-btn ghost dp-full" data-dp="muat">Coba lagi</button>' : '<div class="card dp-note dp-c">Memuat Display…</div>';
     else if (DP.rep) h = dpRepHtml();
-    else if (DP.view === 'form') h = dpForm();
+    else if (DP.view === 'form') { h = dpForm(); dpdSimpan(); setTimeout(dpAutoJadwal, 0); } /* dp-draf + dp-auto */
     else if (DP.open) { var r = dpRs(DP.open)[0]; h = r ? dpDetail(r) : dpList(); }
     else h = dpList();
     el.innerHTML = h;
@@ -4696,13 +4881,13 @@ html { overflow-y: scroll; scrollbar-gutter: stable; }
   }
   function dpResize(file, cb) { var rd = new FileReader(); rd.onerror = function () { cb(null); }; rd.onload = function () { var img = new Image(); img.onerror = function () { cb(null); }; img.onload = function () { var M = 1280, w = img.width, h = img.height, k = Math.min(1, M / Math.max(w, h)), c = document.createElement('canvas'); c.width = Math.round(w * k); c.height = Math.round(h * k); c.getContext('2d').drawImage(img, 0, 0, c.width, c.height); cb(c.toDataURL('image/jpeg', 0.72)); }; img.src = rd.result; }; rd.readAsDataURL(file); }
   function dpSimpan() {
-    var F = DP.f; if (dpWhy() || DP.busy) return; DP.busy = true; DP.err = ''; DP.prog = ''; dpRender();
+    var F = DP.f; if (dpWhy() || DP.busy) return; if (F.tidak && !/^Product Hanger tidak ada: /.test(F.ket || '')) F.ket = 'Product Hanger tidak ada: ' + F.alasan + (String(F.ket || '').trim() ? ' - ' + String(F.ket).trim() : ''); /* dp-md */ if (F.t0 && Date.now() - F.t0 > 30 * 60e3 && String(F.ket || '').indexOf('[Foto diambil') < 0) { var t0 = new Date(F.t0); F.ket = String(F.ket || '') + ' [Foto diambil ' + ('0' + t0.getDate()).slice(-2) + '/' + ('0' + (t0.getMonth() + 1)).slice(-2) + ' ' + ('0' + t0.getHours()).slice(-2) + '.' + ('0' + t0.getMinutes()).slice(-2) + ']'; } /* dp-draf: jujur soal jeda */ DP.busy = true; DP.err = ''; DP.prog = ''; dpRender();
     var nama = (DP.d.toko.concat(DP.lain || [], F.dekat || []).filter(function (t) { return t.k === F.kode; })[0] || {}).n || F.kode, lokal = F.pasang.map(function (p) { return { kat: p.kat, a: p.a, b: p.b }; });
-    var gagal = function (m) { DP.busy = false; DP.prog = ''; DP.err = m; dpRender(); };
+    var gagal = function (m) { DP.busy = false; DP.prog = ''; DP.err = m; if (!F.ubah) { F.gagalAuto = 1; F.autoSig = ''; dpdTulisKini(); dpToast('📶 Laporan belum terkirim, aman di HP. Dicoba lagi otomatis.'); } dpRender(); }; /* dp-auto */
     var naik = function (i) {
       if (i >= F.pasang.length) { selesai(); return; }
-      var p = F.pasang[i]; if (p.aU && p.bU) { naik(i + 1); return; } DP.prog = 'Mengirim foto ' + (i + 1) + ' dari ' + F.pasang.length + '…'; dpRender();
-      google.script.run.withSuccessHandler(function (r) { if (!r || !r.ok) { gagal((r && r.error) || 'Foto gagal terkirim. Tekan Simpan lagi.'); return; } p.aU = p.aU || r.a; p.bU = p.bU || r.b; naik(i + 1); }).withFailureHandler(function () { gagal('Koneksi terputus di foto ' + (i + 1) + '. Tekan Simpan lagi, foto yang sudah terkirim tidak diulang.'); }).displayFotoUp(currentPassword, getDeviceId(), F.cid, i + 1, p.aU ? '' : p.a, p.bU ? '' : p.b);
+      var p = F.pasang[i]; if (F.tidak && p.aU) p.bU = p.aU; /* dp-md: foto bukti tunggal */ if (p.aU && p.bU) { naik(i + 1); return; } DP.prog = 'Mengirim foto ' + (i + 1) + ' dari ' + F.pasang.length + '…'; dpRender();
+      google.script.run.withSuccessHandler(function (r) { if (!r || !r.ok) { gagal((r && r.error) || 'Foto gagal terkirim. Tekan Simpan lagi.'); return; } p.aU = p.aU || r.a; p.bU = p.bU || r.b; if (F.tidak) p.bU = p.aU; naik(i + 1); }).withFailureHandler(function () { gagal('Koneksi terputus di foto ' + (i + 1) + '. Tekan Simpan lagi, foto yang sudah terkirim tidak diulang.'); }).displayFotoUp(currentPassword, getDeviceId(), F.cid, i + 1, p.aU ? '' : p.a, p.bU ? '' : p.b);
     };
     var selesai = function () {
       DP.prog = 'Menyimpan laporan…'; dpRender();
@@ -4712,7 +4897,7 @@ html { overflow-y: scroll; scrollbar-gutter: stable; }
           .displayUbah(currentPassword, getDeviceId(), { id: F.id, cid: F.cid, ket: F.ket, pasang: F.pasang.map(function (p) { return { kat: p.kat, a: p.aU, b: p.bU }; }) });
         return;
       }
-      google.script.run.withSuccessHandler(function (r) { DP.busy = false; DP.prog = ''; if (!r || !r.ok) { DP.err = (r && r.error) || 'Gagal menyimpan. Coba lagi.'; dpRender(); return; } DP.hasil = null; dpCariJadwal(); DP.f = null; DP.view = 'list'; DP.msg = 'Display tersimpan.'; DP.open = null; DP.bulan = ''; DP.shown = 20; DP.tgl = ''; DP.wa = ''; dpBuatRep({ id: r.id, tn: nama, w: dpJam(), nama: r.oleh || '', ket: F.ket }, lokal); dpLoad(true); })
+      google.script.run.withSuccessHandler(function (r) { DP.busy = false; DP.prog = ''; if (!r || !r.ok) { DP.err = (r && r.error) || 'Gagal menyimpan. Coba lagi.'; dpRender(); return; } DP.hasil = null; dpCariJadwal(); dpdHapus(); dpToast(F.auto ? '✅ Laporan tersimpan otomatis' : '✅ Laporan tersimpan', 'good'); DP.f = null; DP.view = 'list'; DP.msg = 'Display tersimpan.'; DP.open = null; DP.bulan = ''; DP.shown = 20; DP.tgl = ''; DP.wa = ''; if (DP.d.md) { DP.msg = '✅ Laporan ' + nama + ' tersimpan.' + (r.lok ? ' ' + r.lok + '.' : '') + ' Lanjut toko berikutnya. Kirim semua toko sekaligus lewat Rekap hari ini.'; dpRender(); window.scrollTo(0, 0); } else dpBuatRep({ id: r.id, tn: nama, w: dpJam(), nama: r.oleh || '', ket: F.ket }, lokal); dpLoad(true); /* dp-md */ })
         .withFailureHandler(function () { gagal('Koneksi terputus. Tekan Simpan lagi, foto yang sudah terkirim tidak diulang.'); })
         .displaySave(currentPassword, getDeviceId(), { cid: F.cid, kode: F.kode, ket: F.ket, lokasi: F.gps, pasang: F.pasang.map(function (p) { return { kat: p.kat, a: p.aU, b: p.bU }; }) });
     };
@@ -4729,16 +4914,16 @@ html { overflow-y: scroll; scrollbar-gutter: stable; }
       g.fillStyle = '#FFFFFF'; g.font = '600 26px sans-serif'; g.fillText('Laporan Display' + (total > 1 ? ' · ' + ke + ' dari ' + total : ''), 36, 50);
       g.font = '700 42px sans-serif'; var nm = String(info.tn); while (g.measureText(nm).width > W - 72 && nm.length > 4) nm = nm.slice(0, -2); if (nm !== String(info.tn)) nm += '…'; g.fillText(nm, 36, 108);
       g.font = '500 28px sans-serif'; g.fillText([info.w, info.nama].filter(Boolean).join(' · '), 36, 156);
-      g.fillStyle = '#2A1650'; g.font = '700 32px sans-serif'; g.fillText(grp.kat + ' · ' + n + ' pasang', 36, 244);
-      g.fillStyle = '#5B22B8'; g.font = '700 30px sans-serif'; g.fillText('SEBELUM', 36, 300); g.fillText('SESUDAH', 60 + bw, 300);
-      for (var i = 0; i < n; i++) { var y = top + i * (rowH + gap); dpFit(g, im[i * 2], 36, y, bw, rowH); dpFit(g, im[i * 2 + 1], 60 + bw, y, bw, rowH); }
+      g.fillStyle = '#2A1650'; g.font = '700 32px sans-serif'; g.fillText(grp.lbl ? grp.kat : grp.kat + ' · ' + n + ' pasang', 36, 244);
+      g.fillStyle = '#5B22B8'; g.font = '700 30px sans-serif'; if (grp.tidak) g.fillText('BUKTI KONDISI TOKO · PRODUCT HANGER TIDAK ADA', 36, 300); else { g.fillText('SEBELUM', 36, 300); g.fillText('SESUDAH', 60 + bw, 300); }
+      for (var i = 0; i < n; i++) { var y = top + i * (rowH + gap); if (grp.tidak) { dpFit(g, im[0], 36, y, W - 72, rowH); continue; } dpFit(g, im[i * 2], 36, y, bw, rowH); dpFit(g, im[i * 2 + 1], 60 + bw, y, bw, rowH); if (grp.lbl && grp.lbl[i]) { g.font = '800 28px sans-serif'; var lw = g.measureText(grp.lbl[i].toUpperCase()).width + 28; g.fillStyle = 'rgba(42,22,80,.88)'; g.fillRect(36, y, lw, 48); g.fillStyle = '#FFFFFF'; g.fillText(grp.lbl[i].toUpperCase(), 50, y + 34); } } /* dp-md: label Kepala/Badan/Kaki */
       return new Promise(function (ok) { c.toBlob(ok, 'image/jpeg', 0.92); });
     });
   }
   function dpKelompok(pasang) { var urut = [], byK = {}; pasang.forEach(function (p) { if (!byK[p.kat]) { byK[p.kat] = { kat: p.kat, items: [] }; urut.push(byK[p.kat]); } byK[p.kat].items.push(p); }); return urut; }
   function dpCaption(info, grup) {
     var ket = String(info.ket || '').replace(/\s+/g, ' ').trim();
-    return ['*LAPORAN DISPLAY PAJANGAN*', 'Toko: ' + info.tn, 'Tanggal: ' + info.w, 'Kategori: ' + grup.map(function (x) { return dpKs(x.kat); }).join(', ')].concat(info.nama ? ['Oleh: ' + info.nama] : [], ket ? ['Keterangan: ' + ket] : []).join('\n');
+    return ['*LAPORAN DISPLAY PAJANGAN*', 'Toko: ' + info.tn, 'Tanggal: ' + info.w, (DP.d && DP.d.md ? 'Bagian: ' : 'Kategori: ') + grup.map(function (x) { return dpKs(x.kat); }).join(', ')].concat(info.nama ? ['Oleh: ' + info.nama] : [], ket ? ['Keterangan: ' + ket] : []).join('\n');
   }
   function dpBuatRep(info, pasang) {
     var grup = dpKelompok(pasang), R = DP.rep = { busy: true, done: 0, total: grup.length, blobs: [], urls: [], msg: '', err: '', tn: info.tn, id: info.id, sent: !!info.wa, cap: dpCaption(info, grup) }; dpRender(); window.scrollTo(0, 0);
@@ -4758,12 +4943,22 @@ html { overflow-y: scroll; scrollbar-gutter: stable; }
   }
   function dpKirim() {
     var R = DP.rep, files; try { files = R.blobs.map(function (b, i) { return new File([b], 'display-' + (i + 1) + '.jpg', { type: 'image/jpeg' }); }); } catch (e) { files = []; }
-    var manual = function () { var m = 'Menu bagikan tidak tersedia. Tekan lama gambar di bawah untuk menyimpan, lalu kirim lewat WhatsApp.'; R.msg = m; dpRender(); if (navigator.clipboard && R.cap) navigator.clipboard.writeText(R.cap).then(function () { R.msg = m + ' Caption sudah disalin, tinggal tempel.'; dpRender(); }, function () {}); };
-    if (files.length && navigator.canShare && navigator.canShare({ files: files }) && navigator.share) navigator.share({ files: files, title: 'Laporan Display', text: R.cap }).then(function () { if (R.id) dpTandai(R.id, true); }, function (e) { if (!e || e.name !== 'AbortError') manual(); }); else manual();
+    /* dp-wa (10 Nov 2026): menu bagikan selesai BUKAN bukti terkirim (HP dgn 2 WhatsApp / WA ganda sering tidak pindah). Tanda "sudah dikirim" hanya dari jawaban user. */
+    var manual = function () { R.msg = 'Menu bagikan tidak tersedia di HP ini. Pakai cara di bawah.'; R.alt = true; R.tanya = false; dpRender(); };
+    if (files.length && navigator.canShare && navigator.canShare({ files: files }) && navigator.share) navigator.share({ files: files, title: 'Laporan Display', text: R.cap }).then(function () { R.msg = ''; R.tanya = !!(R.id || R.ids); dpRender(); }, function (e) { if (!e || e.name !== 'AbortError') manual(); }); else manual();
+  }
+  function dpSimpanGaleri() {
+    var R = DP.rep; if (!R || !R.blobs.length) return; var nm = String(R.tn || 'toko').replace(/[^A-Za-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 30) || 'toko';
+    R.blobs.forEach(function (b, i) { setTimeout(function () { var a = document.createElement('a'); a.href = R.urls[i]; a.download = 'display-' + nm + '-' + (i + 1) + '.jpg'; document.body.appendChild(a); a.click(); a.remove(); }, i * 600); });
+    R.simpan = true; R.msg = R.blobs.length + ' gambar disimpan ke HP (folder Download / Galeri).'; dpRender();
+  }
+  function dpSalinCap() {
+    var R = DP.rep; if (!R) return; var done = function (ok) { R.salin = ok; R.msg = ok ? 'Keterangan disalin. Tempel di WhatsApp saat mengirim gambar.' : 'Tidak bisa menyalin otomatis. Tekan lama teks keterangan di bawah lalu Salin.'; R.capLihat = !ok; dpRender(); };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(R.cap || '').then(function () { done(true); }, function () { done(false); }); else done(false);
   }
   /* Foto yang belum tersimpan: form baru yang sudah berisi foto, atau form Ubah yang fotonya berubah. */
   function dpKotor() { var F = DP.f; return !!F && (F.ubah ? !!F.kotor : F.pasang.some(function (p) { return p.a || p.b; })); }
-  function dpKeluarForm() { DP.view = 'list'; DP.f = null; DP.err = ''; dpRender(); window.scrollTo(0, 0); }
+  function dpKeluarForm() { if (DP.f && !DP.f.ubah) dpdHapus(); DP.view = 'list'; DP.f = null; DP.err = ''; dpRender(); window.scrollTo(0, 0); }
   function dpMintaKeluar() { if (dpKotor()) { DP.f.tanya = true; dpRender(); window.scrollTo(0, 0); } else dpKeluarForm(); }
   function dpTutupDetail() { DP.open = null; DP.msg = ''; DP.err = ''; DP.hapus = null; dpRender(); window.scrollTo(0, 0); }
   /* Tombol Kembali HP: benar = sudah ditangani di menu Display. */
@@ -4775,9 +4970,14 @@ html { overflow-y: scroll; scrollbar-gutter: stable; }
     if (DP.open) { dpTutupDetail(); return true; }
     var h = document.querySelector('[data-nav="home"]'); if (h) h.click(); else d.className = 'tab-home'; window.scrollTo(0, 0); return true;
   };
+  window.dpBackIn = function () { if (DP.busy) return true; if (DP.rep) { DP.rep = null; dpRender(); window.scrollTo(0, 0); return true; } if (DP.view === 'form') { if (DP.f && !DP.f.tanya) dpMintaKeluar(); return true; } if (DP.open) { dpTutupDetail(); return true; } return false; }; /* dp-md */
+  window.dpMdBuka = function (host) { var r = dpEl(); if (host && r && r.parentNode !== host) host.appendChild(r); if (!DP.d || !DP.d.md) { DP.d = null; DP.view = 'list'; DP.msg = ''; DP.open = null; DP.rep = null; dpLoad(); } else dpRender(); };
   window.renderDisplayTab = dpRender;
   document.addEventListener('click', function (e) {
-    var t = e.target.closest && e.target.closest('[data-dp],[data-dptoko],[data-dpdel],[data-dphapus],[data-dpopen],[data-dprep],[data-dpk],[data-dptambah],[data-dpwa],[data-dpm],#dpOpen'); if (!t) return;
+    var t = e.target.closest && e.target.closest('[data-dp],[data-dptoko],[data-dpdel],[data-dphapus],[data-dpopen],[data-dprep],[data-dpk],[data-dptambah],[data-dpwa],[data-dpm],[data-dprekap],[data-dpph],[data-dpal],#dpOpen'); if (!t) return;
+    if (t.hasAttribute('data-dprekap')) { dpRekap(t.getAttribute('data-dprekap')); return; } /* dp-md */
+    if (t.hasAttribute('data-dpph')) { var Fp = DP.f, tdk = t.getAttribute('data-dpph') === 'tidak'; if (Fp.tidak !== tdk && Fp.pasang.some(function (p) { return p.a || p.b; }) && !window.confirm('Foto yang sudah diambil akan dihapus. Lanjut?')) return; Fp.tidak = tdk; Fp.alasan = ''; Fp.pasang = [{ kat: tdk ? 'Product Hanger tidak ada' : DP.d.kategori[0], a: '', b: '' }]; dpRender(); return; }
+    if (t.hasAttribute('data-dpal')) { DP.f.alasan = t.getAttribute('data-dpal'); dpRender(); return; }
     if (t.id === 'dpOpen') { dpBuka(); return; }
     if (t.hasAttribute('data-dptoko')) { DP.f.kode = t.getAttribute('data-dptoko'); dpRender(); return; }
     if (t.hasAttribute('data-dpwa')) { var wq = t.getAttribute('data-dpwa').split(':'); dpTandai(wq[0], wq[1] === '1'); return; }
@@ -4794,7 +4994,12 @@ html { overflow-y: scroll; scrollbar-gutter: stable; }
     else if (a === 'resetf') { DP.err = ''; var gb = DP.d.bulanList && DP.d.bulan !== DP.d.bulanList[0]; DP.hasil = null; DP.cariGagal = ''; DP.q = ''; DP.tgl = ''; DP.wa = ''; DP.bulan = ''; DP.shown = 20; if (gb) dpLoad(true); else dpRender(); }
     else if (a === 'hapuscari') { DP.hasil = null; DP.cariGagal = ''; DP.q = ''; DP.shown = 20; dpRender(); var qe = document.getElementById('dpQ'); if (qe) qe.focus(); }
     else if (a === 'hapuscaritoko') { DP.f.cari = ''; dpRender(); var ce = document.getElementById('dpCari'); if (ce) ce.focus(); }
-    else if (a === 'baru') { DP.f = dpBaru(); DP.view = 'form'; DP.msg = ''; DP.err = ''; dpMuatLain(); dpRender(); dpGps(); window.scrollTo(0, 0); }
+    else if (a === 'baru') { if (DP.draf && DP.draf.F && !window.confirm('Masih ada laporan belum tersimpan (' + (DP.draf.F.tnDraf || 'toko') + '). Membuat laporan baru akan MENGGANTI draf itu. Lanjut buat baru?')) return; /* dp-draf: 1 draf per orang */ DP.f = dpBaru(); DP.view = 'form'; DP.msg = ''; DP.err = ''; dpMuatLain(); if (DP.d.md) { DP.f.mode = 'dekat'; DP.f.pasang = [{ kat: DP.d.kategori[0], a: '', b: '' }]; dpDekat(); } dpRender(); dpGps(); window.scrollTo(0, 0); }
+    else if (a === 'mdkeluar') { if (window.mdKeBeranda) window.mdKeBeranda(); }
+    else if (a === 'draflanjut') { if (DP.draf && DP.draf.F) { DP.f = DP.draf.F; DP.view = 'form'; DP.msg = ''; DP.err = ''; DP.open = null; dpMuatLain(); dpRender(); window.scrollTo(0, 0); } } /* dp-draf: GPS & jam foto asli dipertahankan */
+    else if (a === 'autotunda') { if (DP.f) { DP.f.autoTunda = dpSig(DP.f); DP.f.autoAt = 0; dpRender(); } }
+    else if (a === 'keluardraf') { dpdTulisKini(); DP.view = 'list'; DP.f = null; DP.err = ''; DP.msg = '📝 Laporan disimpan di HP sebagai draf. Lanjutkan dan tekan Simpan saat ada sinyal.'; dpRender(); window.scrollTo(0, 0); }
+    else if (a === 'drafbuang') { if (window.confirm('Buang laporan yang belum tersimpan? Foto harus diambil ulang di toko.')) { dpdHapus(); dpRender(); } }
     else if (a === 'muatlain') { DP.lainSt = ''; dpMuatLain(); dpRender(); }
     else if (a === 'semualagi') { DP.f.semua = (DP.f.semua || 50) + 50; dpRender(); }
     else if (a === 'kembali') { if (DP.f && DP.f.tanya) { DP.f.tanya = false; dpRender(); } else dpMintaKeluar(); }
@@ -4808,11 +5013,16 @@ html { overflow-y: scroll; scrollbar-gutter: stable; }
     else if (a === 'gantitoko') { DP.f.kode = ''; dpRender(); }
     else if (a === 'simpan') { if (dpWhy()) { DP.f.coba = true; dpRender(); var ms = document.querySelector('#dpRoot .dp-miss'); if (ms) ms.scrollIntoView({ block: 'center' }); else window.scrollTo(0, 0); } else dpSimpan(); }
     else if (a === 'kirim') dpKirim();
+    else if (a === 'waya') { if (DP.rep) { DP.rep.tanya = false; if (DP.rep.ids) dpTandaiBanyak(DP.rep.ids); else if (DP.rep.id) dpTandai(DP.rep.id, true); } } /* dp-wa */
+    else if (a === 'watidak') { if (DP.rep) { DP.rep.tanya = false; DP.rep.alt = true; DP.rep.msg = 'Belum terkirim. Coba Kirim ulang, atau pakai cara manual di bawah.'; dpRender(); } }
+    else if (a === 'altbuka') { if (DP.rep) { DP.rep.alt = true; dpRender(); } }
+    else if (a === 'simpangal') dpSimpanGaleri();
+    else if (a === 'salincap') dpSalinCap();
     else if (a === 'reptutup') { DP.rep = null; dpRender(); window.scrollTo(0, 0); }
   });
   document.addEventListener('input', function (e) {
     var t = e.target; if (!t || !t.id) return;
-    if (t.id === 'dpCari') { DP.f.cari = t.value; dpRender(); } else if (t.id === 'dpQ') { DP.q = t.value; DP.shown = 20; dpRender(); dpCariJadwal(); } else if (t.id === 'dpKet') DP.f.ket = t.value;
+    if (t.id === 'dpCari') { DP.f.cari = t.value; dpRender(); } else if (t.id === 'dpQ') { DP.q = t.value; DP.shown = 20; dpRender(); dpCariJadwal(); } else if (t.id === 'dpKet') { DP.f.ket = t.value; dpdSimpan(); }
   });
   document.addEventListener('change', function (e) {
     var t = e.target; if (!t || !t.getAttribute) return;
@@ -4820,7 +5030,7 @@ html { overflow-y: scroll; scrollbar-gutter: stable; }
     if (t.id === 'dpWaF') { DP.wa = t.value; DP.shown = 20; dpRender(); return; }
     if (t.id === 'dpTglF') { DP.tgl = t.value; DP.shown = 20; dpRender(); return; }
     if (t.hasAttribute('data-dpkat')) { DP.f.pasang[+t.getAttribute('data-dpkat')].kat = t.value; dpRender(); return; }
-    if (t.hasAttribute('data-dpfile') && t.files && t.files[0]) { var q = t.getAttribute('data-dpfile').split(':'), F = DP.f; dpResize(t.files[0], function (u) { if (!u) { DP.err = 'Foto tidak bisa dibaca. Coba lagi.'; } else if (F.pasang[+q[0]]) { F.pasang[+q[0]][q[1]] = u; F.pasang[+q[0]][q[1] + 'U'] = ''; F.kotor = true; } dpRender(); }); }
+    if (t.hasAttribute('data-dpfile') && t.files && t.files[0]) { var q = t.getAttribute('data-dpfile').split(':'), F = DP.f; dpResize(t.files[0], function (u) { if (!u) { DP.err = 'Foto tidak bisa dibaca. Coba lagi.'; } else if (F.pasang[+q[0]]) { F.pasang[+q[0]][q[1]] = u; F.pasang[+q[0]][q[1] + 'U'] = ''; F.kotor = true; if (!F.t0) F.t0 = Date.now(); dpAman(F, +q[0], q[1]); } dpRender(); }); }
   });
   /* /dp-client */
   function mdOn() { var el = document.getElementById('mdScreen'); return !!el && !el.hidden; }
@@ -4880,7 +5090,7 @@ html { overflow-y: scroll; scrollbar-gutter: stable; }
     el.innerHTML = '<div class="md-top"><div class="md-tt"><div class="md-title" id="mdTitle">Tugas</div><div class="md-sub" id="mdSub"></div></div>' +
       '<button type="button" class="md-sync" id="mdSync" aria-label="Status sinkron"><span class="md-dot" id="mdDot"></span><span id="mdSyncTxt"></span></button>' +
       '<button type="button" class="md-ibtn" id="mdReload" aria-label="Muat ulang"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg></button></div>' +
-      '<div id="mdQBar"></div><div id="mdBody"></div>' +
+      '<div id="mdQBar"></div><div id="mdBody"></div><div id="mdDpHost" hidden></div>' +
       '<nav class="md-nav" aria-label="Menu MD">' + ['beranda', 'tugas', 'peta', 'panduan', 'akun'].map(function (k) { return '<button type="button" class="nav-item" data-mdnav="' + k + '"><span class="ni-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + ic[k] + '</svg></span>' + lbl[k] + '</button>'; }).join('') + '</nav>' +
       '<div class="md-sheetwrap" id="mdSheetWrap" aria-hidden="true"><div class="md-back" data-mdx="1"></div><div class="md-sheet" role="dialog" aria-modal="true"><div class="md-sh-head"><div class="md-sh-t" id="mdShT"></div><button type="button" class="md-sh-x" data-mdx="1" aria-label="Tutup">×</button></div><div class="md-sh-body" id="mdShB"></div><div class="md-sh-foot" id="mdShF"></div></div></div>';
     var host = document.getElementById('dashboard'); host.parentNode.insertBefore(el, host.nextSibling);
@@ -4904,6 +5114,9 @@ html { overflow-y: scroll; scrollbar-gutter: stable; }
   function mdQLabel(qa) { var a = qa.filter(function (x) { return x.kind === 'av'; }).length, e = qa.length - a; return [e ? e + ' eksekusi' : '', a ? a + ' hasil audit' : ''].filter(Boolean).join(' + '); }
   function mdPaint() {
     mdPaintTop(); var b = document.getElementById('mdBody'); if (!b || !MD.d) return;
+    var dh = document.getElementById('mdDpHost'); /* dp-md: Laporan Display MD memakai modul Display yang sama */
+    if (MD.tab === 'display') { if (MD.map) { try { MD.map.remove(); } catch (e) {} MD.map = null; } b.hidden = true; b.innerHTML = ''; if (dh) { dh.hidden = false; if (window.dpMdBuka) window.dpMdBuka(dh); } Array.prototype.forEach.call(document.querySelectorAll('#mdScreen .nav-item, .bottom-nav [data-mdnav]'), function (x) { x.classList.remove('active'); }); return; }
+    b.hidden = false; if (dh) dh.hidden = true;
     if (MD.tab !== 'peta' && MD.map) { /* peta dipertahankan, hanya disembunyikan */ }
     var mapHost = document.getElementById('mdMapWrap');
     if (MD.tab === 'peta') { if (!mapHost) { b.innerHTML = mdPetaHtml(); mdMapInit(); } else { b.querySelector('.md-mapf-w').outerHTML = mdMapFiltHtml(); var lg = b.querySelector('.md-legend'); if (lg) lg.outerHTML = mdLegendHtml(); mdMapDraw(); } return; }
@@ -5110,7 +5323,11 @@ html { overflow-y: scroll; scrollbar-gutter: stable; }
   // ===== lembar =====
   function mdOpen(sh) { var cu = MD.sh; if (cu && cu !== sh && cu.from !== sh && !sh.from && !sh.back && sh.type !== cu.type) sh.from = cu; /* nav-kembali */ MD.sh = sh; var w = document.getElementById('mdSheetWrap'); w.classList.add('show'); w.setAttribute('aria-hidden', 'false'); document.body.classList.add('md-sheet-open'); mdSheetPaint(); var b = document.getElementById('mdShB'); if (b) b.scrollTop = 0; }
   function mdClose() { MD.sh = null; var w = document.getElementById('mdSheetWrap'); if (!w) return; w.classList.remove('show'); w.setAttribute('aria-hidden', 'true'); document.body.classList.remove('md-sheet-open'); if (MD.ex) MD.ex.stopGps && MD.ex.stopGps(); }
-  window.mdBack = function () { if (!mdOn()) return false; if (MD.sh) { if (MD.sh.from) { if (MD.ex && MD.ex.stopGps) MD.ex.stopGps(); mdOpen(MD.sh.from); } else mdClose(); return true; } return false; };
+  /* md-rev: penampil foto di dalam aplikasi (sebelumnya membuka tab baru sehingga menu aplikasi hilang) */
+  function mdLb(u) { var lb = document.getElementById('mdLb'); if (!lb) { lb = document.createElement('div'); lb.id = 'mdLb'; lb.className = 'md-lb'; lb.setAttribute('role', 'dialog'); lb.setAttribute('aria-modal', 'true'); document.body.appendChild(lb); }
+    if (!u) { lb.hidden = true; lb.innerHTML = ''; return; } lb.innerHTML = '<div class="md-lb-top"><a href="' + mdE(u) + '" target="_blank" rel="noopener">Buka file asli ↗</a><button type="button" class="md-lb-x" data-mdlbx="1">✕ Tutup</button></div><div class="md-lb-img"><img src="' + mdE(mdThumb(u, 1600)) + '" alt="Foto diperbesar"></div>'; lb.hidden = false; }
+  document.addEventListener('click', function (e) { var a = e.target.closest && e.target.closest('.md-bigs a[href], .md-ph a[href]'); if (a && !a.classList.contains('nofoto')) { e.preventDefault(); mdLb(a.getAttribute('href')); return; } if (e.target.closest && (e.target.closest('[data-mdlbx]') || e.target.classList.contains('md-lb-img'))) mdLb(''); });
+  window.mdBack = function () { var lb = document.getElementById('mdLb'); if (lb && !lb.hidden) { mdLb(''); return true; } if (!mdOn()) return false; if (MD.tab === 'display' && !MD.sh) { if (!(window.dpBackIn && window.dpBackIn())) window.mdKeBeranda(); return true; } /* dp-md */ if (MD.sh) { if (MD.sh.from) { if (MD.ex && MD.ex.stopGps) MD.ex.stopGps(); mdOpen(MD.sh.from); } else mdClose(); return true; } return false; };
   function mdSheetPaint(keep) {
     var s = MD.sh; if (!s) return; var B = document.getElementById('mdShB'), st = keep ? B.scrollTop : 0, r;
     if (s.type === 'tugas') r = mdTugasSheet(s); else if (s.type === 'ex') r = mdExSheet(); else if (s.type === 'free') r = mdFreeSheet(); else if (s.type === 'pus') r = mdPusSheet(s); else if (s.type === 'av') r = mdAvSheet(s); else return;
@@ -5125,6 +5342,7 @@ html { overflow-y: scroll; scrollbar-gutter: stable; }
     var d = t.det || {}, b = '<div class="md-stline ' + t.sb + (t.terlambat || t.lama ? ' bad' : '') + '"><b>' + MD_SBL[t.sb] + (t.pend ? ' · menunggu kirim' : '') + '</b><span>' + mdWhen(t) + '</span></div>' + (mdTags(t) ? '<div class="md-tags">' + mdTags(t) + '</div>' : '');
     if (t.diperbarui) b += '<div class="md-warnb">✎ Salesman memperbarui konfirmasi setelah jadwal disetujui. Periksa rencana & tanggal usulan baru, lalu setujui atau ubah lagi.</div>';
     if (t.alasanUbah && t.sb === 'jadwal') b += '<div class="md-infob">Tanggal diubah MD: ' + mdE(t.alasanUbah) + (t.usul && t.usul !== t.rencana ? ' (usul salesman ' + mdDt(t.usul) + ')' : '') + '</div>';
+    if (t.sb === 'terpasang') b += (t.fh && t.fh.length ? mdPhotos(t.fh, '📸 Dokumentasi sesudah terpasang (' + t.fh.length + ' foto)') : '<div class="md-mut">Foto dokumentasi terpasang belum ada.</div>'); /* md-rev */
     b += '<div class="md-sec">Rencana pemasangan (dari konfirmasi salesman)</div>';
     var plan = '';
     if (t.ph && (t.ph.t || t.ph.j)) plan += '<div class="md-plan"><b>Product Hanger (PH)</b><span>' + mdE(t.ph.t || '-') + ' · ' + (t.ph.j ? t.ph.j + ' unit' : 'jumlah & posisi ditentukan di lokasi') + (t.ph.pipa ? ' · pipa besi ' + mdE(t.ph.pipa) : '') + '</span>' + (t.ph.pos ? '<small>Posisi: ' + mdE(t.ph.pos) + '</small>' : '') + '</div>';
@@ -5361,6 +5579,7 @@ html { overflow-y: scroll; scrollbar-gutter: stable; }
   }
   function mdPanSeg() { return '<div class="md-seg" role="tablist">' + [['pustaka', '📚 Perpustakaan'], ['panduan', '📖 Panduan MD']].map(function (x) { return '<button type="button" role="tab" class="md-segb' + (MD.pan === x[0] ? ' on' : '') + '" data-mdpan="' + x[0] + '">' + x[1] + '</button>'; }).join('') + '</div>'; }
   function mdProg(n, d) { /* md-brd: bilah progres = komponen Plus (progress-track/fill/pct) */ var p = d > 0 ? Math.round(n / d * 100) : 0; return '<div class="progress-track"><div class="progress-fill ' + (p >= 100 ? 's-success' : p >= 50 ? 's-mid' : 's-pending') + '" style="width:' + Math.min(100, p) + '%"></div><span class="progress-pct">' + p + '%</span></div>'; }
+  function mdTile(ico, l, v, s, go, tone, bad) { /* md-rev: kotak angka Beranda = tombol ke daftar terkait */ return '<button type="button" class="md-tile ' + tone + (v ? '' : ' zero') + '" data-mdgo="' + go + '"><span class="mt-ico" aria-hidden="true">' + ico + '</span><span class="mt-go" aria-hidden="true">›</span><span class="mt-val">' + v + '</span><span class="mt-lbl">' + l + '</span>' + (s ? '<span class="mt-sub' + (bad ? ' bad' : '') + '">' + s + '</span>' : '') + '</button>'; }
   function mdNb(l, v, s) { return '<div class="numbox"><span class="nb-label">' + l + '</span><span class="nb-val">' + v + '</span>' + (s ? '<span class="nb-sub">' + s + '</span>' : '') + '</div>'; }
   function mdActs(A) { return A.length ? A.map(function (x) { return '<button type="button" class="md-act" data-mdgo="' + x[3] + '"><span class="md-actn' + (x[4] ? ' bad' : '') + '">' + x[0] + '</span><span class="md-actt"><b>' + x[1] + '</b><small>' + x[2] + '</small></span><span class="md-chev">›</span></button>'; }).join('') : '<div class="md-empty sm">Tidak ada yang perlu ditindak 👍</div>'; }
   function mdBerandaHtml() { /* md-brd (8 Nov 2026, pilihan user): Beranda MD = komponen Plus (kartu menimpa kepala, kotak angka, bilah progres) + "perlu tindakan" DIKELOMPOKKAN per jenis tugas (Pemasangan | Audit Visibility); kotak ungu dihapus */
@@ -5373,13 +5592,14 @@ html { overflow-y: scroll; scrollbar-gutter: stable; }
       (a.ok === false ? '<div class="igt-sub">Data Perfect Store belum bisa dibaca: ' + mdE(a.error || '-') + '</div>' : '<div class="igt-amount">' + (a.perfect || 0) + ' <small>dari ' + (a.total || 0) + ' outlet</small></div>' + mdProg(a.perfect || 0, a.total || 0) +
       '<div class="igt-sub">' + (AVG.p1.length ? 'Jadi <b>' + ((a.perfect || 0) + AVG.p1.length) + '</b> bila ' + AVG.p1.length + ' outlet yang didahulukan lolos audit' : 'Tidak ada outlet yang tinggal V') + (a.vUntil ? ' · data V s.d. ' + mdDs(a.vUntil) : '') + '</div>') + '</div>';
     h += '<div class="card md-bcard"><div class="section-title">' + nb('<path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/>') + 'Pemasangan</div>' +
-      '<div class="numboxes">' + mdNb('Jadwal perlu Anda setujui', G.setuju.length) + mdNb('Harus Anda pasang hari ini', G.hari.length, late ? 'termasuk ' + late + ' terlambat' : '') + '</div>' +
-      '<div class="total-badge-row"><span class="tb-label">Terpasang bulan ini <b>' + dipasang + '</b> · sisa ' + sisa + ' tugas</span></div>' + mdProg(dipasang, dipasang + sisa) +
+      '<div class="md-tiles">' + mdTile('📅', 'Jadwal perlu Anda setujui', G.setuju.length, lama ? lama + ' menunggu > ' + hk + ' hari kerja' : 'usulan salesman', 'g:setuju', 't-amber', !!lama) + mdTile('🔧', 'Harus Anda pasang hari ini', G.hari.length, late ? 'termasuk ' + late + ' terlambat' : 'sesuai jadwal', 'g:hari', 't-brand', !!late) + '</div>' +
+      '<div class="md-hl"><span class="hl-ico" aria-hidden="true">✅</span><span>Terpasang bulan ini <b>' + dipasang + '</b> · sisa <b>' + sisa + '</b> tugas</span></div>' + mdProg(dipasang, dipasang + sisa) +
       '<div class="md-acts">' + mdActs([[G.setuju.length, 'Setujui tanggal usulan', lama ? lama + ' menunggu lebih dari ' + hk + ' hari kerja' : 'usulan dari salesman', 'g:setuju', !!lama], [late, 'Terlambat dipasang', 'lewat dari tanggal rencana', 'g:hari', true], [G.hari.length - late, 'Harus Anda pasang hari ini', 'sesuai jadwal hari ini', 'g:hari', false], [qa, 'Belum terkirim', 'tersimpan di HP, kirim saat ada sinyal', 'q', true]].filter(function (x) { return x[0] > 0; })) + '</div></div>';
     h += '<div class="card md-bcard au"><div class="section-title">' + nb('<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/>') + 'Audit Visibility</div>' +
-      '<div class="numboxes">' + mdNb('Dahulukan', AVG.p1.length) + mdNb('Bisa menyusul', AVG.p2.length) + '</div>' +
-      '<div class="total-badge-row"><span class="tb-label">Sudah diaudit <b>' + AVG.done.length + '</b> dari ' + avTot + ' outlet bulan ini</span></div>' + mdProg(AVG.done.length, avTot) +
+      '<div class="md-tiles">' + mdTile('⚡', 'Audit: dahulukan', AVG.p1.length, 'lolos = langsung Perfect Store', 'a:p1', 't-pink') + mdTile('⏳', 'Audit: bisa menyusul', AVG.p2.length, 'A/D belum beres', 'a:p2', 't-slate') + '</div>' +
+      '<div class="md-hl au"><span class="hl-ico" aria-hidden="true">🎯</span><span>Sudah diaudit <b>' + AVG.done.length + '</b> dari <b>' + avTot + '</b> outlet bulan ini</span></div>' + mdProg(AVG.done.length, avTot) +
       '<div class="md-acts">' + mdActs([[AVG.p1.length, 'Audit: dahulukan', 'tinggal V, audit lolos = langsung Perfect Store', 'a:p1', false], [AVG.lanjut.length, 'Perlu tindak lanjut', 'KBK kurang: pasang lalu audit ulang', 'a:lanjut', true], [AVG.p2.length, 'Audit: bisa menyusul', 'A/D juga belum beres (urusan salesman)', 'a:p2', false]].filter(function (x) { return x[0] > 0; })) + '</div></div>';
+    h += '<button type="button" class="md-dpcard" data-mddp="1"><span class="dc-ico" aria-hidden="true">📸</span><span><b>Laporan Display</b><small>' + (window.dpDraftInfo && window.dpDraftInfo() ? '📝 Ada 1 laporan belum tersimpan, ketuk untuk melanjutkan' : 'Foto Product Hanger (Kepala) per toko · kirim WhatsApp sekali lewat Rekap hari ini') + '</small></span><span class="dc-go" aria-hidden="true">›</span></button>'; /* dp-md */
     h += '<div class="md-short"><button type="button" class="md-btn ghost" data-mdnav="peta">' + mdSvg('<path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/>') + 'Buka Peta</button><button type="button" class="md-btn ghost" data-mdgo="pustaka">' + mdSvg('<path d="M4 4h4v16H4zM10 4h4v16h-4z"/><path d="M16.5 4.6l3.8-1 3.7 15.5-3.8 1z"/>') + 'Perpustakaan</button></div>';
     return h;
   }
@@ -5394,8 +5614,12 @@ html { overflow-y: scroll; scrollbar-gutter: stable; }
       if (MD.sh && MD.sh.type === 'tugas') mdClose(); mdReload(true);
     });
   }
+  window.mdBukaDisplay = function () { MD.tab = 'display'; mdClose(); mdPaint(); };
+  window.mdRepaint = function () { if (mdOn() && MD.tab === 'beranda') mdPaint(); }; /* dp-draf */
+  window.mdKeBeranda = function () { MD.tab = 'beranda'; mdPaint(); window.scrollTo(0, 0); }; /* dp-md */
   function mdClick(e) {
     var t = e.target, c = function (s) { return t.closest ? t.closest(s) : null; }, b;
+    if (c('[data-mddp]')) { MD.tab = 'display'; mdClose(); mdPaint(); window.scrollTo(0, 0); return; } /* dp-md */
     if (c('[data-mdshback]')) { if (MD.ex && MD.ex.stopGps) MD.ex.stopGps(); mdOpen(MD.sh.from); return; }
     if ((b = c('[data-mdx]'))) { mdClose(); return; }
     if ((b = c('[data-mdnav]'))) { MD.tab = b.getAttribute('data-mdnav'); if (MD.tab === 'pustaka') { MD.tab = 'panduan'; MD.pan = 'pustaka'; } mdClose(); mdPaint(); window.scrollTo(0, 0); return; }
