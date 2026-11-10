@@ -1999,6 +1999,7 @@ html { overflow-y: scroll; scrollbar-gutter: stable; }
     if (backGuard.on) return;
     backGuard.on = true;
     try { history.pushState({ radarSonik: 1 }, ''); } catch (e) {}
+    var once = function () { try { history.pushState({ radarSonik: 1 }, ''); } catch (e) {} document.removeEventListener('pointerdown', once, true); document.removeEventListener('keydown', once, true); }; document.addEventListener('pointerdown', once, true); document.addEventListener('keydown', once, true); /* gerbang-laptop (11 Nov): pasang ulang saat klik pertama (sesi dipulihkan tanpa klik) */
   }
   window.addEventListener('popstate', function () {
     if (!backGuard.on) return;
